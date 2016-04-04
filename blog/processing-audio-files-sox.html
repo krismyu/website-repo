@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Processing audio files (with SoX) - Kristine M. Yu</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../blog/processing-audio-files-sox.html">
+
+        <meta name="author" content="Kristine Yu" />
+        <meta name="keywords" content="ldc-kiy,fieldwork,coding,shell,sox,audio" />
+        <meta name="description" content="This tutorial introduces how to process audio files from fieldwork recordings with SoX, a command-line utility for working with soundfiles.1 See the tutorial Processing audio (with Praat) for the sister tutorial using Praat. Following an introductory section, the tutorial shows how to use SoX command utilities to view information ..." />
+
+        <meta property="og:site_name" content="Kristine M. Yu" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Processing audio files (with SoX)"/>
+        <meta property="og:url" content="../blog/processing-audio-files-sox.html"/>
+        <meta property="og:description" content="This tutorial introduces how to process audio files from fieldwork recordings with SoX, a command-line utility for working with soundfiles.1 See the tutorial Processing audio (with Praat) for the sister tutorial using Praat. Following an introductory section, the tutorial shows how to use SoX command utilities to view information ..."/>
+        <meta property="article:published_time" content="2013-06-23" />
+            <meta property="article:section" content="articles" />
+            <meta property="article:tag" content="ldc-kiy" />
+            <meta property="article:tag" content="fieldwork" />
+            <meta property="article:tag" content="coding" />
+            <meta property="article:tag" content="shell" />
+            <meta property="article:tag" content="sox" />
+            <meta property="article:tag" content="audio" />
+            <meta property="article:author" content="Kristine Yu" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../theme/css/bootstrap.cosmo.min.css" type="text/css"/>
+    <link href="../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
+        <link href="../static/custom.css" rel="stylesheet">
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../" class="navbar-brand">
+Kristine M. Yu            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="/research">Research</a></li>
+                    <li><a href="/teaching">Teaching</a></li>
+                    <li><a href="/code">Code</a></li>
+                    <li><a href="/blog">Blog</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../blog/archives/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../blog/processing-audio-files-sox.html"
+                       rel="bookmark"
+                       title="Permalink to Processing audio files (with SoX)">
+                        Processing audio files (with SoX)
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-06-23T16:45:00-04:00"> 2013 June 23</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="../blog/tag/ldc-kiy.html">ldc-kiy</a>
+        /
+	<a href="../blog/tag/fieldwork.html">fieldwork</a>
+        /
+	<a href="../blog/tag/coding.html">coding</a>
+        /
+	<a href="../blog/tag/shell.html">shell</a>
+        /
+	<a href="../blog/tag/sox.html">sox</a>
+        /
+	<a href="../blog/tag/audio.html">audio</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>This tutorial introduces how to process audio files from fieldwork
+recordings with <a href="http://sox.sourceforge.net/">SoX</a>, a command-line
+utility for working with soundfiles.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup> See the tutorial
+<a href="processing-audio-files-praat.html">Processing audio (with Praat)</a> for
+the sister tutorial using Praat.</p>
+<!-- PELICAN_END_SUMMARY -->
+
+<p>Following an <a href = "#intro">introductory section</a>, the tutorial
+shows how to use <a href="http://sox.sourceforge.net/">SoX</a> command utilities to view information about a
+soundfile, make three different modifications to the soundfile, and
+batch process audio files:</p>
+<ul>
+<li><a href="#display">Displaying information about the audio file</a></li>
+<li><a href="#downsample">Downsampling the audio file</a></li>
+<li><a href="#bit">Reducing the bit depth of the file</a></li>
+<li><a href="#channel">Extracting a single channel from the file</a></li>
+<li><a href="#batch">Batch processing</a></li>
+</ul>
+<h2><a id="intro"></a> Introduction</h2>
+<p>What is SoX? The <a href="http://sox.sourceforge.net/">homepage for SoX</a> calls it "the Swiss Army knife of
+sound processing programs" and gives the following description:</p>
+<blockquote>
+<p>SoX is a cross-platform (Windows, Linux, MacOS X, etc.) command line utility that can convert various formats of computer audio files in to other formats. It can also apply various effects to these sound files, and, as an added bonus, SoX can play and record audio files on most platforms.</p>
+</blockquote>
+<p>Why <a href="http://www.computerhope.com/issues/ch000619.htm" title="Computer Hope general comparison">use</a> <a href="http://www.linuxdevcenter.com/pub/a/linux/2001/11/15/learnunixos.html" title="Linux Dev Center">the</a> <a href="http://www.linfo.org/command_line.html">command line</a> for processing audio files?
+As a set of command line utilities, SoX is especially fast for batch processing of audio
+files. SoX commands can also be strung together with each other as
+well as any other shell command on the command line as part of a
+script. We'll get a flavor of this in the tutorial section on <a href="#batch">batch
+processing</a>. </p>
+<p>Some materials to help get started with SoX include:</p>
+<ul>
+<li><a href="http://sox.sourceforge.net/Docs/Documentation">The official SoX documentation</a></li>
+<li><a href="http://billposer.org/Linguistics/Computation/SoxTutorial.html">Bill Poser's SoX tutorial</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/05/sound-exchange-sox-15-examples-to-manipulate-audio-files/">Geek Stuff tutorial</a></li>
+</ul>
+<p>Check the official SoX website for the most up-to-date documentation. The two tutorials listed are a bit outdated, but still useful for getting started.</p>
+<h3>The command line</h3>
+<p>For a command-line interface, Mac users can use the built-in <a href="http://guides.macrumors.com/Terminal">Terminal application</a>. Linux users have built-in <a href="http://linuxcommand.org/lts0010.php#xterm">terminal emulators</a> as well. PC Users need to install a terminal emulator like <a href="http://www.cygwin.com/">cygwin</a>.</p>
+<p>We're not going to review using the command line here, but here is a list of some introductory tutorials.</p>
+<ul>
+<li><a href="http://lifehacker.com/5633909/who-needs-a-mouse-learn-to-use-the-command-line-for-almost-anything">Lifehacker: A command line primer for beginners</a></li>
+<li><a href="http://mac.tutsplus.com/tutorials/terminal/navigating-the-terminal-a-gentle-introduction/">mactuts: navigating the terminal</a></li>
+<li><a href="http://lifehacker.com/179514/geek-to-live--introduction-to-cygwin-part-i">Lifehacker: introduction to cygwin</a></li>
+</ul>
+<p>And here are a few more in-depth tutorials that are on-line:</p>
+<ul>
+<li><a href="http://software-carpentry.org/4_0/shell/index.html">Software Carpentry: The shell</a></li>
+<li><a href="http://www.ee.surrey.ac.uk/Teaching/Unix/">University of Surrey</a></li>
+</ul>
+<p>For a book-length treatment, you might try the
+<a href="http://oreilly.com/">O'Reilly</a> series book, <a href="http://shop.oreilly.com/product/9780596002619.do">Learning the Unix Operating System</a>.</p>
+<h3>Instructions for tutorials</h3>
+<p>The files for the tutorials can be found in
+<a href="http://media.krisyu.org/ldc-kiy">this directory</a> under
+<code>tutorials/processing-audio-files</code> (<a href="http://media.krisyu.org/ldc-kiy/tutorials/processing-audio-files/">here</a>). Once you've downloaded the ldc-kiy repository, you can enter commands yourself to follow along with the tutorial.</p>
+<p>In the ldc-kiy directory, change the working directory to the <code>tutorials/processing-audio-files</code> directory with the <code>cd</code> command and list the directory contents with <code>ls</code>:</p>
+<div class="highlight"><pre><span></span><span class="c1">#change working directory to tutorial directory</span>
+<span class="nb">cd</span> tutorials/processing-audio-files
+ls <span class="c1"># list directory contents</span>
+</pre></div>
+
+
+<p>You should see something like this in your terminal:</p>
+<div class="highlight"><pre><span></span>amoebe@moebius :: ls
+demo/      your-turn/
+</pre></div>
+
+
+<p>The <code>demo/</code> directory contains all the files used and generated during the tutorial for your reference. The <code>your-turn/</code> directory is for you to play in and contains only the raw audio files the tutorial works with, and not any of the generated files from the tutorial. The rest of the tutorial will assume that the user starts in the directory <code>ldc-kiy/tutorials/processing-audio-files/your-turn/</code>.</p>
+<hr />
+<h2><a id="display"></a>Displaying audio file information</h2>
+<p>In the <code>your-turn/</code> directory, navigate to <code>20111213/raw/</code> and see
+what's in there:</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> 20111213/raw/ <span class="c1"># navigate from the your-turn directory</span>
+ls <span class="c1"># display directory contents</span>
+</pre></div>
+
+
+<p>You'll see that there is a wav file in <code>your-turn/20111213/raw</code>:</p>
+<div class="highlight"><pre><span></span>amoebe@moebius :: ls
+20111213-1-kiy-ap-framedwordlist.wav
+</pre></div>
+
+
+<p>We can use sox to display information about the wav file as follows:</p>
+<div class="highlight"><pre><span></span>sox --i 20111213-1-kiy-ap-framedwordlist.wav <span class="c1"># display audio file header info</span>
+</pre></div>
+
+
+<p>The output from the <code>sox --i</code> command is given below. </p>
+<div class="highlight"><pre><span></span>Input File     : <span class="s1">&#39;20111213-1-kiy-ap-framedwordlist.wav&#39;</span>
+Channels       : 2
+Sample Rate    : 48000
+Precision      : 16-bit
+Duration       : 00:05:47.83 <span class="o">=</span> <span class="m">16695936</span> samples ~ 26087.4 CDDA sectors
+File Size      : 66.8M
+Bit Rate       : 1.54M
+Sample Encoding: 16-bit Signed Integer PCM
+</pre></div>
+
+
+<ul>
+<li><code>Input File</code> lists the file name.</li>
+<li><code>Channels</code> indicates that there are 2 channels in the file (Channel 1 was for the consultant; Channel 2 for the translator/elicitor)</li>
+<li><code>Sample rate</code> indicates the audio file was sampled at 48000 Hz (or equivalently, 48 kHz)</li>
+<li><code>Precision</code> tells us the precision or bit depth of the file, 16-bit.</li>
+<li>Note that the <code>file size</code> is 66.8 megabytes for a recording with a <code>duration</code> of just <code>00:05.47.83</code>, i.e., just under 6 minutes!</li>
+</ul>
+<p>The sample rate of 48kHz is much higher than needed for working with
+speech so we can <a href="#downsample">downsample</a> the file to keep the file
+size down. We also want to
+extract just one of the 2 channels, the channel reserved for the
+consultant (Channel 1), for further data analysis.</p>
+<hr />
+<h2><a id="downsample"></a>Downsampling</h2>
+<p>Below, we downsample the sampling rate of the file
+ <code>20111213-1-kiy-ap-framedwordlist.wav</code> from 48kHz to 16kHz and write
+ the downsampled file to a new file
+ <code>20111213-1-kiy-ap-framedwordlist-stereo.wav</code> in a new directory in
+ <code>your-turn/20111213/1</code> we call <code>data/</code>. We give the new filename a
+ <code>-stereo</code> suffix to remind ourselves that this file still has 2
+ channels. It's good to keep the stereo (2-channel) file around for
+ reference, since it includes information about how items were
+ elicited if we need to check those details later.</p>
+<p>Starting in <code>your-turn/20111213/1/raw/</code>:</p>
+<div class="highlight"><pre><span></span><span class="c1"># create new data sub-directory in parent directory 1/</span>
+mkdir ../data 
+
+<span class="c1"># downsample to 16kHz and write to file in data/</span>
+<span class="c1"># &#39;-r 16k&#39; specifies resampling at a 16kHz sampling rate</span>
+sox 20111213-1-kiy-ap-framedwordlist.wav -r 16k ../data/20111213-1-kiy-ap-framedwordlist-stereo.wav
+</pre></div>
+
+
+<p>We can change the working directory to the directory with the new downsampled file and display the audio file information:</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> ../data/ <span class="c1"># change working directory to directory with downsampled file</span>
+sox --i 20111213-1-kiy-ap-framedwordlist-stereo.wav
+</pre></div>
+
+
+<p>Note in the displayed info below that the the sample rate of this new file is 16000 Hz (16kHz), as desired. Moreover, the file size has dropped from 66.8 MB to 22.3MB.</p>
+<div class="highlight"><pre><span></span>Input File     : <span class="s1">&#39;20111213-1-kiy-ap-framedwordlist-stereo.wav&#39;</span>
+Channels       : 2
+Sample Rate    : 16000
+Precision      : 16-bit
+Duration       : 00:05:47.83 <span class="o">=</span> <span class="m">5565312</span> samples ~ 26087.4 CDDA sectors
+File Size      : 22.3M
+Bit Rate       : 512k
+Sample Encoding: 16-bit Signed Integer PCM
+</pre></div>
+
+
+<hr />
+<h2><a id="bit"></a>Reducing bit depth</h2>
+<p>We can tweak the downsampling command slightly to get the command
+needed to reduce the <a href="http://wiki.audacityteam.org/wiki/Bit_Depth">bit depth</a> of an audio file:</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> ../raw/ <span class="c1"># change back to the raw/ directory</span>
+
+<span class="c1"># &#39;-b 16&#39; specifies reducing bit depth to 16 bit</span>
+sox 20111213-1-kiy-ap-framedwordlist.wav -b <span class="m">16</span> ../data/20111213-1-kiy-ap-framedwordlist-stereo.wav 
+</pre></div>
+
+
+<p>Since the original file precision was already <code>16-bit</code>, there is no
+change to the precision so the output from <code>sox --i</code> in <code>data/</code> would remain the same
+as before. </p>
+<p>It is also possible to combine the commands for downsampling and
+changing precision, as follows (starting in the <code>raw/</code> directory):</p>
+<div class="highlight"><pre><span></span><span class="c1"># &#39;-b 16&#39; specifies converting to a bit depth of 16 and &#39;r 16k&#39; indicates converting to a sampling rate of 16kHz.</span>
+sox 20111213-1-kiy-ap-framedwordlist.wav -b <span class="m">16</span> -r 16k ../data/20111213-1-kiy-ap-framedwordlist-stereo.wav
+</pre></div>
+
+
+<hr />
+<h2><a id="channel"></a>Extracting a channel</h2>
+<p>We recorded the elicitation session with two channels,</p>
+<ul>
+<li>Channel 1 (left channel): consultant</li>
+<li>Channel 2 (right channel): elicitor/translator</li>
+</ul>
+<p>To extract a channel from the stereo audio file, we use the <code>remix</code>
+effect: for an input file with 2 channels, <code>remix 1 0</code> selects Channel
+1, while <code>remix 0 1</code> selects Channel 2.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup> Here, we select Channel 1
+using <code>remix 1 0</code> to extract the consultant's channel from the
+downsampled stereo file <code>20111213-1-kiy-ap-framedwordlist-stereo.wav</code>
+in <code>data/</code> and write to a new file in <code>data/</code> we call
+<code>20111213-1-kiy-ap-framedwordlist.wav</code>. Starting from the <code>raw/</code>
+directory where we left off:</p>
+<div class="highlight"><pre><span></span><span class="c1"># change directory to data/ sub-directory from raw/ sub-directory</span>
+<span class="nb">cd</span> ../data/
+sox 20111213-1-kiy-ap-framedwordlist-stereo.wav 20111213-1-kiy-ap-framedwordlist.wav remix 1
+</pre></div>
+
+
+<p>Alternatively, this command is less terse and does the same thing:</p>
+<div class="highlight"><pre><span></span><span class="c1"># &#39;-c 1&#39; specifies the output file to have 1 channel</span>
+<span class="c1"># &#39;remix&#39; selects and mixes input audio channels into output audio channels</span>
+sox 20111213-1-kiy-ap-framedwordlist-stereo.wav -c <span class="m">1</span> 20111213-1-kiy-ap-framedwordlist.wav remix <span class="m">1</span> 0
+</pre></div>
+
+
+<p>Putting all 3 changes together, we can also combine all of them as one
+command as follows, sidestepping the creation of the downsampled
+stereo file in <code>data/</code>:</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> ../raw
+sox 20111213-1-kiy-ap-framedwordlist.wav -b <span class="m">16</span> -r 16k ../data/20111213-1-kiy-ap-framedwordlist-stereo.wav remix 1
+</pre></div>
+
+
+<hr />
+<h2><a id="batch"></a>Batch processing</h2>
+<p>The real power of SoX comes when you're trying to perform the same
+operation on a bunch of audio files at once. We present an example of
+batch processing audio files with SoX below to give you a flavor.</p>
+<p>The relevant files for this demo are in <code>your-turn/batch-demo/</code>.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Change the working directory to batch-demo/ from 20111213/1/data/ or 20111213/1/raw/</span>
+<span class="nb">cd</span> ../../batch-demo
+
+ls <span class="c1"># list directory contents</span>
+</pre></div>
+
+
+<p>You'll see there are 11 wav files in the directory:</p>
+<div class="highlight"><pre><span></span>amoebe@moebius :: ls
+20111213-1-kiy-ap-framedwordlist-1.wav   20111213-1-kiy-ap-framedwordlist-15.wav
+20111213-1-kiy-ap-framedwordlist-10.wav  20111213-1-kiy-ap-framedwordlist-16.wav
+20111213-1-kiy-ap-framedwordlist-11.wav  20111213-1-kiy-ap-framedwordlist-17.wav
+20111213-1-kiy-ap-framedwordlist-12.wav  20111213-1-kiy-ap-framedwordlist-18.wav
+20111213-1-kiy-ap-framedwordlist-13.wav  20111213-1-kiy-ap-framedwordlist-19.wav
+20111213-1-kiy-ap-framedwordlist-14.wav
+</pre></div>
+
+
+<p>Suppose we'd like to find out the duration of each of these 11 wav
+files. We can do this with an additional option for <code>sox --i</code>, say,
+for the file <code>20111213-1-kiy-ap-framedwordlist-1.wav</code>:</p>
+<div class="highlight"><pre><span></span>sox --i -D 20111213-1-kiy-ap-framedwordlist-1.wav
+</pre></div>
+
+
+<p>and we find out that <code>20111213-1-kiy-ap-framedwordlist-1.wav</code> has a
+duration of 0.804 seconds:</p>
+<div class="highlight"><pre><span></span>amoebe@moebius :: sox --i -D 20111213-1-kiy-ap-framedwordlist-1.wav
+0.804000
+</pre></div>
+
+
+<p>We can do this for each of the 11 wav files with a single command,
+using
+<a href="http://www.tldp.org/LDP/abs/html/globbingref.html">file globbing</a>,
+which allows use of the wildcard <code>*</code> to perform filename expansion:</p>
+<div class="highlight"><pre><span></span><span class="c1"># The wildcard * allows any string of characters between - and .wav</span>
+<span class="c1"># (with some hedges for `any&#39;, see</span>
+<span class="c1"># http://www.tldp.org/LDP/abs/html/globbingref.html for details)</span>
+
+sox --i -D 20111213-1-kiy-ap-framedwordlist-*.wav
+
+<span class="c1"># This is equivalent to a sequence of sox --i -D commands, one for</span>
+<span class="c1"># each of the 11 files with filenames matching 20111213-1-kiy-ap-framedwordlist-*.wav</span>
+</pre></div>
+
+
+<p>which gives us the output:</p>
+<div class="highlight"><pre><span></span>amoebe@moebius :: sox --i -D 20111213-1-kiy-ap-framedwordlist-*.wav
+0.804000
+0.863500
+0.832625
+0.827750
+0.793188
+0.869062
+0.903687
+0.996812
+0.922500
+0.796438
+0.933625
+</pre></div>
+
+
+<p>This is a lot faster than opening each audio file in some program and
+checking how long each one is.</p>
+<p>We can also chain together shell commands. Suppose we want to save
+these durations to a log file called <code>durations.txt</code>. We can easily
+create such a file, with the first column indicating which filenumber 1-11
+the duration corresponds to.</p>
+<div class="highlight"><pre><span></span>paste -d<span class="s1">&#39;\t&#39;</span> &lt;<span class="o">(</span>jot <span class="m">11</span> 1<span class="o">)</span> &lt;<span class="o">(</span>sox --i -D 20111213-1-kiy-ap-framedwordlist-*.wav<span class="o">)</span> &gt; durations.txt
+</pre></div>
+
+
+<p>We can use the <code>more</code> command to view the content of the text file <code>durations.txt</code>:</p>
+<div class="highlight"><pre><span></span>amoebe@moebius :: more durations.txt
+<span class="m">1</span>       0.804000
+<span class="m">2</span>       0.863500
+<span class="m">3</span>       0.832625
+<span class="m">4</span>       0.827750
+<span class="m">5</span>       0.793188
+<span class="m">6</span>       0.869062
+<span class="m">7</span>       0.903687
+<span class="m">8</span>       0.996812
+<span class="m">9</span>       0.922500
+<span class="m">10</span>      0.796438
+<span class="m">11</span>      0.933625
+</pre></div>
+
+
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>SoX is used in the backend of
+<a href="https://github.com/langtech/toney">Toney</a>, the tone classification
+software developed by Haejoong Lee and Steven Bird as part of the NSF project <a href="http://www.prosodicsystems.org/">Prosodic Systems in New Guinea</a>.&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>SoX used to have an <code>avg</code> effect you could use for this, which
+is still listed in various SoX tutorials. The
+<code>avg</code> effect is now deprecated. Use <code>remix</code> instead.&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'krisyu'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'processing-audio-files-sox';
+                var disqus_url = '../blog/processing-audio-files-sox.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-twitter fa-lg"></i><span class="icon-label">Latest Tweets</span></h4></li>
+    <div id="twitter_timeline">
+        <a class="twitter-timeline" data-chrome="noheader" href="https://twitter.com/linguist_krisyu" data-widget-id="716655349130989568">Tweets by linguist_krisyu</a>
+    </div>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 Kristine M. Yu
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'krisyu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Piwik -->
+    <script type="text/javascript">
+        var _paq = _paq || [];
+        _paq.push(["trackPageView"]);
+        _paq.push(["enableLinkTracking"]);
+
+        (function() {
+            var u=(("https:" == document.location.protocol) ? "https://www.piwik.krisyu.org/" : "http://www.piwik.krisyu.org/");
+            _paq.push(["setTrackerUrl", u+"piwik.php"]);
+            _paq.push(["setSiteId", "2"]);
+            var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+            g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Piwik Code -->
+
+</body>
+</html>
