@@ -145,6 +145,8 @@ PLUGINS = [
 #    'sitemap',
     ]
 
+PYGMENTS_STYLE = 'monokai'
+MD_EXTENSIONS = ['toc', 'fenced_code', 'codehilite(css_class=highlight)', 'extra']
 #LATEX = 'article' # Only use LaTeX for selected articles
 
 # Set static paths
