@@ -32,7 +32,7 @@
         <link rel="stylesheet" href="../theme/css/bootstrap.cosmo.min.css" type="text/css"/>
     <link href="../theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="../theme/css/pygments/native.css" rel="stylesheet">
+    <link href="../theme/css/pygments/monokai.css" rel="stylesheet">
     <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
         <link href="../static/custom.css" rel="stylesheet">
 
@@ -122,13 +122,13 @@ plugin is deprecated and has been superseded by the
 <li><a href="#latex">LaTeX</a>
 <!-- PELICAN_END_SUMMARY --></li>
 </ul>
-<h2><a id = "core-markdown"></a> Core Markdown reference</h2>
-<h3>Text formatting</h3>
-<h4>Headlines and horizontal rules</h4>
+<h2 id="core-markdown-reference"><a id = "core-markdown"></a> Core Markdown reference</h2>
+<h3 id="text-formatting">Text formatting</h3>
+<h4 id="headlines-and-horizontal-rules">Headlines and horizontal rules</h4>
 <p>Headline depth can be indicated with #, e.g.</p>
-<h1>H1, with '#'</h1>
-<h2>H2, with '##'</h2>
-<h3>H3, with '###'</h3>
+<h1 id="h1-with">H1, with '#'</h1>
+<h2 id="h2-with">H2, with '##'</h2>
+<h3 id="h3-with">H3, with '###'</h3>
 <p>Headlines for H1 and H2 can also be indicated with "underlining":</p>
 <div class="highlight"><pre><span></span>H1
 ====
@@ -138,8 +138,8 @@ H2
 </pre></div>
 
 
-<h1>H1</h1>
-<h2>H2</h2>
+<h1 id="h1">H1</h1>
+<h2 id="h2">H2</h2>
 <p>Horizontal rules can be indicated with 3+ of *, - or _:</p>
 <div class="highlight"><pre><span></span><span class="gh">***</span>
 <span class="gh">---</span>
@@ -150,7 +150,7 @@ ___
 <hr />
 <hr />
 <hr />
-<h4>Emphasis</h4>
+<h4 id="emphasis">Emphasis</h4>
 <p>Emphasized text can be indicated with * or _</p>
 <ol>
 <li>Emphasized text looks like <em>this</em> or <em>this</em></li>
@@ -159,13 +159,13 @@ e.g. <strong>this</strong> or <strong>this</strong></li>
 <li>Strong and emphasized text can be indicate with triple asterisks,
 <strong><em>like this</em></strong></li>
 </ol>
-<h4>Blockquotes</h4>
+<h4 id="blockquotes">Blockquotes</h4>
 <p>Blockquotes can be indicated with &gt;</p>
 <blockquote>
 <p>Here's a blockquote.</p>
 <p>Here's another blockquote.</p>
 </blockquote>
-<h4>Lists</h4>
+<h4 id="lists">Lists</h4>
 <p>Items in itemized lists can be enumerated with +, -, * for unordered lists or with 1., 2., 3. for ordered lists.</p>
 <div class="highlight"><pre><span></span>* Unordered item
 * Another unordered item
@@ -203,15 +203,15 @@ e.g. <strong>this</strong> or <strong>this</strong></li>
 <p>Item with new paragraph</p>
 </li>
 </ul>
-<h3>Links</h3>
-<h4>In-line link</h4>
+<h3 id="links">Links</h3>
+<h4 id="in-line-link">In-line link</h4>
 <div class="highlight"><pre><span></span><span class="p">[</span><span class="n">link</span> <span class="n">text</span><span class="p">](</span><span class="n">link</span> <span class="s">&quot;Optional title&quot;</span><span class="p">)</span>
 <span class="p">[</span><span class="n">blog</span><span class="p">](</span><span class="nl">http</span><span class="p">:</span><span class="c1">//www.krisyu.org &quot;blog&quot;)</span>
 </pre></div>
 
 
 <p><a href="http://www.krisyu.org" title="blog">Kristine's blog</a></p>
-<h4>Referenced link</h4>
+<h4 id="referenced-link">Referenced link</h4>
 <div class="highlight"><pre><span></span>Here&#39;s a link to [UMass Linguistics][1] and here&#39;s one to [UCLA
 Linguistics][2]
 
@@ -221,7 +221,7 @@ Linguistics][2]
 
 
 <p>Here's a link to <a href="http://www.umass.edu/linguist" title="UMass Linguistics">UMass Linguistics</a> and here's one to <a href="http://www.linguistics.ucla.edu" title="UCLA Linguistics">UCLA Linguistics</a></p>
-<h3>Images</h3>
+<h3 id="images">Images</h3>
 <p>In-line images: </p>
 <div class="highlight"><pre><span></span>![Sideways kitties](/static/blog/img/2013/06/emmy-sophie-sideways.jpg &quot;Emmy and Sophie&quot;)
 </pre></div>
@@ -240,14 +240,14 @@ Linguistics][2]
 <p><img alt="Young Indie" src="/static/blog/img/2013/06/indie.jpg" title="Young Indie" /></p>
 <p><img alt="Baby Hunter" src="/static/blog/img/2013/06/hunter.jpg" title="Baby Hunter" /></p>
 <hr />
-<h2><a id = "py-markdown"</a>Python Markdown extensions</h2>
+<h2 id="python-markdown-extensions"><a id = "py-markdown"</a>Python Markdown extensions</h2>
 <p><a href="http://docs.getpelican.com/en/3.2/settings.html">Pelican settings documentation</a>
 lists <code>MD_EXTENSIONS</code> as a configurable setting, with the default:</p>
 <p><code>MD_EXTENSIONS (['codehilite(css_class=highlight)','extra'])</code></p>
 <p>Supported Python Markdown extensions are listed
 <a href="http://pythonhosted.org/Markdown/extensions/">here</a>. The default
 setting of <code>extra</code> for <code>MD_EXTENSIONS</code> includes the following set of extensions:</p>
-<h3><a href="http://pythonhosted.org/Markdown/extensions/attr_list.html">Attribute lists</a></h3>
+<h3 id="attribute-lists"><a href="http://pythonhosted.org/Markdown/extensions/attr_list.html">Attribute lists</a></h3>
 <p>Here's an example of specifying the <em>id</em> for a header:</p>
 <div class="highlight"><pre><span></span>### A hash style header ### {: #barcode }
 </pre></div>
@@ -279,7 +279,7 @@ element:</p>
 </pre></div>
 
 
-<h3><a href="http://pythonhosted.org/Markdown/extensions/footnotes.html">Footnotes</a></h3>
+<h3 id="footnotes"><a href="http://pythonhosted.org/Markdown/extensions/footnotes.html">Footnotes</a></h3>
 <div class="highlight"><pre><span></span>The cat that chased the rat meowed.[^1]
 
 [^1]: Whoa, is this some embedding?
@@ -287,7 +287,7 @@ element:</p>
 
 
 <p>The cat that chased the rat meowed.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></p>
-<h3><a href="http://pythonhosted.org/Markdown/extensions/tables.html">Tables</a></h3>
+<h3 id="tables"><a href="http://pythonhosted.org/Markdown/extensions/tables.html">Tables</a></h3>
 <div class="highlight"><pre><span></span>Lexer  | shortname | file extensions
 ------------- | ------------- | ----------
 `Python3Lexer`  | python3, py3 |
@@ -328,14 +328,14 @@ element:</p>
 </tr>
 </tbody>
 </table>
-<h3><a href="http://pythonhosted.org/Markdown/extensions/smart_strong.html">Smart Strong</a></h3>
+<h3 id="smart-strong"><a href="http://pythonhosted.org/Markdown/extensions/smart_strong.html">Smart Strong</a></h3>
 <p>This treats double underscores within words intelligently??</p>
 <div class="highlight"><pre><span></span>___first___second____third
 </pre></div>
 
 
 <p><strong><em>first</em></strong>second____third</p>
-<h3><a href="http://pythonhosted.org/Markdown/extensions/abbreviations.html">Abbreviations</a></h3>
+<h3 id="abbreviations"><a href="http://pythonhosted.org/Markdown/extensions/abbreviations.html">Abbreviations</a></h3>
 <div class="highlight"><pre><span></span>*[ATP]: adenosine triphosphate
 *[PDCB]: paradichlorobenzene
 
@@ -346,7 +346,7 @@ common ingredient in mothballs.
 
 <p>The molecule <abbr title="adenosine triphosphate">ATP</abbr> provides energy to molecular motors. <abbr title="paradichlorobenzene">PDCB</abbr> is a
 common ingredient in mothballs.</p>
-<h3><a href="http://pythonhosted.org/Markdown/extensions/definition_lists.html">Definition lists</a></h3>
+<h3 id="definition-lists"><a href="http://pythonhosted.org/Markdown/extensions/definition_lists.html">Definition lists</a></h3>
 <div class="highlight"><pre><span></span><span class="n">ineffable</span>
 <span class="o">:</span>   <span class="n">the</span> <span class="n">property</span> <span class="n">of</span> <span class="n">being</span> <span class="n">undefinable</span>
 
@@ -362,7 +362,7 @@ common ingredient in mothballs.</p>
 <dd>equally clumsy with both hands, from <em>Latin</em> `both left'</dd>
 </dl>
 <hr />
-<h3><a id = "code"></a><a href="http://pythonhosted.org/Markdown/extensions/fenced_code_blocks.html">Fenced Code Blocks</a> and <a href="http://pythonhosted.org/Markdown/extensions/code_hilite.html">syntax highlighting</a></h3>
+<h3 id="fenced-code-blocks-and-syntax-highlighting"><a id = "code"></a><a href="http://pythonhosted.org/Markdown/extensions/fenced_code_blocks.html">Fenced Code Blocks</a> and <a href="http://pythonhosted.org/Markdown/extensions/code_hilite.html">syntax highlighting</a></h3>
 <p>Core Markdown syntax uses
 <a href="http://daringfireball.net/projects/markdown/syntax#precode">indenting</a>
 for code blocks. John Gruber's documentation says:</p>
@@ -375,7 +375,7 @@ which play nice with list indentation. From the <a href="http://pythonhosted.org
 <blockquote>
 <p>Fenced code blocks can have a blank line as the first and/or last line of a code block and they can also come immediately after a list item without becoming part of the list.</p>
 </blockquote>
-<h5>Fenced code blocks</h5>
+<h5 id="fenced-code-blocks">Fenced code blocks</h5>
 <p>With <code>~~~~{.python} ... ~~~~</code>:</p>
 <div class="highlight"><pre><span></span>~~~~{.python} # block open (don&#39;t include this comment in your code)
 # python code
@@ -402,7 +402,7 @@ print &#39;Hello world&#39;
 </pre></div>
 
 
-<h4>Syntax highlighting</h4>
+<h4 id="syntax-highlighting">Syntax highlighting</h4>
 <p>Syntax highlighting is enabled by default in Pelican with the
     extension
     <a href="http://pythonhosted.org/Markdown/extensions/code_hilite.html"><code>CodeHilite</code></a>,
@@ -488,7 +488,7 @@ print &#39;Hello world&#39;
 </pre></div>
 
 
-<h4>Syntax highlighting: languages supported by pygments</h4>
+<h4 id="syntax-highlighting-languages-supported-by-pygments">Syntax highlighting: languages supported by pygments</h4>
 <p>The <a href="http://pygments.org/languages/">list of supported languages</a>
 includes Awk, C, C++, F#, Haskell, Java, Javascript, Matlab,
 Octave, OCaml, Prolog, Python,  S/S+/R, Bash shell scripts,
@@ -672,7 +672,7 @@ variable <span class="o">&lt;-</span> <span class="kp">rbind</span><span class="
 
 
 <hr />
-<h2><a id = "latex"></a> <span class="math">\(\LaTeX\)</span></h2>
+<h2 id="latex"><a id = "latex"></a> <span class="math">\(\LaTeX\)</span></h2>
 <p>The Pelican <span class="math">\(\LaTeX\)</span>
 <a href="https://github.com/getpelican/pelican-plugins/tree/master/latex">plug-in</a>
 uses <a href="http://www.mathjax.org/">MathJaX</a>. <strong>Update: 04/2015: the latex

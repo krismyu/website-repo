@@ -32,7 +32,7 @@
         <link rel="stylesheet" href="../theme/css/bootstrap.cosmo.min.css" type="text/css"/>
     <link href="../theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="../theme/css/pygments/native.css" rel="stylesheet">
+    <link href="../theme/css/pygments/monokai.css" rel="stylesheet">
     <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
         <link href="../static/custom.css" rel="stylesheet">
 
@@ -123,7 +123,7 @@ rather than working with command-line utilities.</p>
 <p>The files referred to in the tutorial can be found in
 <a href="http://media.krisyu.org/ldc-kiy/">this directory</a> in
 the <code>tutorials/organizing-elicitation-items/</code> <a href="http://media.krisyu.org/ldc-kiy/tutorials/organizing-elicitation-items/">sub-directory</a>.</p>
-<h2><a id="hash"></a>Using dictionaries as data structures</h2>
+<h2 id="using-dictionaries-as-data-structures"><a id="hash"></a>Using dictionaries as data structures</h2>
 <p>Dictionaries are abstract data structures in widespread use in
 computer science that associate unique, immutable <strong>keys</strong> with
 <strong>values</strong>. The idea of a dictionary is useful not only for practical
@@ -196,7 +196,7 @@ nomenclature could be problematic for the following reasons:</p>
   elicitation items, another instance of the problem of mutability.</p>
 <p>One good solution to these problems is to use the dictionary data
 structure for keeping track of elicitation items. </p>
-<h3>Barcodes for elicitation items</h3>
+<h3 id="barcodes-for-elicitation-items">Barcodes for elicitation items</h3>
 <p align="center">
 <a href="/img/2013/06/codigobarras.svg"><img style = "float:middle" class="size-full"
 alt="Barcode image from http://openclipart.org/detail/81883/codigde-barras--by-asrafil" src="/img/2013/06/codigobarras.svg" width="200" /></a> 
@@ -232,7 +232,7 @@ Table 1 shows an extract from the dictionary for
 tips for efficiency and semi-automated entry in working with
 spreadsheets. We use Microsoft Excel for demonstration, but similar
 approaches are available in other spreadsheet software programs.</p>
-<h3>Example tables illustrating dictionary data structures for organizing elicitation items</h3>
+<h3 id="example-tables-illustrating-dictionary-data-structures-for-organizing-elicitation-items">Example tables illustrating dictionary data structures for organizing elicitation items</h3>
 <table>
     <caption>Table 1: Extract from 20111213-1-kiy-ap-framedwordlist dictionary</caption>
     <thead>
@@ -464,7 +464,7 @@ approaches are available in other spreadsheet software programs.</p>
 </table>
 
 <hr />
-<h2><a id="spreadsheet"></a>Working with spreadsheets</h2>
+<h2 id="working-with-spreadsheets"><a id="spreadsheet"></a>Working with spreadsheets</h2>
 <p>For Table 2 above, we only filled in a portion of the columns by
 hand. Many of the columns are fully specified by other columns. For
 instance, <code>sent.kiy</code> entries are simply concatenated from <code>tone.1</code> and
@@ -533,7 +533,7 @@ the first few rows in (1, 2, 3) and then click and drag to select
 those three cells, you can use the same <em>fill down</em> trick described
 above to fill in the rest of the item entries.</p>
 <hr />
-<h2><a id="text"></a>Working with text files in the shell</h2>
+<h2 id="working-with-text-files-in-the-shell"><a id="text"></a>Working with text files in the shell</h2>
 <p>For command line aficionados (see
 <a href="..//processing-audio-files-sox/#intro">the introductory section</a>
 of
@@ -543,7 +543,7 @@ spreadsheet software programs like Excel is to work directly with text
 files from the command line. Here we'll show how to do the same steps
 as above in Excel at the command line, beginning with converting text
 file line endings across platforms.</p>
-<h3>Text file formats and line endings</h3>
+<h3 id="text-file-formats-and-line-endings">Text file formats and line endings</h3>
 <p>A common issue that comes up in dealing with text files is that there
 are
 <a href="http://www.rfc-editor.org/EOLstory.txt">different characters</a> <a href="http://www.codinghorror.com/blog/2010/01/the-great-newline-schism.html">for line endings</a>,
@@ -641,7 +641,7 @@ item    word.1  word.2  verb    gloss.1 gloss.2 gloss.verb  tone.1  tone.2  bito
 </pre></div>
 
 
-<h3>Command-line utilities for adding associated information</h3>
+<h3 id="command-line-utilities-for-adding-associated-information">Command-line utilities for adding associated information</h3>
 <p>We'll demonstrate using command-line utilities for adding associated
 information with <code>20111215-2-kiy-ap-framedwordlist</code>.
 Let's start with just the first nine columns, <code>item</code>, <code>word.1</code>,
@@ -737,7 +737,7 @@ item word.1 word.2 verb gloss.1 gloss.2 gloss.verb tone.1 tone.2  bitone sent.ki
 
 
 <hr />
-<h2><a id="files"></a>Organizing files</h2>
+<h2 id="organizing-files"><a id="files"></a>Organizing files</h2>
 <p>One issue that comes up with having a lot of recorded data is the
 proliferation of audio files that needs to be dealt with. Some tips
 for managing the multitudes of files are:</p>
@@ -784,7 +784,7 @@ for managing the multitudes of files are:</p>
           + <a href="http://unix.stackexchange.com/questions/1136/batch-renaming-files">Command</a> <a href="http://hints.macworld.com/article.php?story=20010509130450691">line</a> <a href="http://superuser.com/questions/25378/mass-renaming-nix-version">utilities</a>  </p>
 </li>
 </ul>
-<h3>Examples of directory structure and filenaming</h3>
+<h3 id="examples-of-directory-structure-and-filenaming">Examples of directory structure and filenaming</h3>
 <p>Here's an example of directory structure and filenaming for Kirikiri
 data from the
 <a href="http://media.krisyu.org/ldc-kiy/tutorials/organizing-elicitation-items/">the organizing-elicitation-tiems sub-directory</a>

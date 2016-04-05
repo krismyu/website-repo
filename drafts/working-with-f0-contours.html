@@ -33,7 +33,7 @@
         <link rel="stylesheet" href="../theme/css/bootstrap.cosmo.min.css" type="text/css"/>
     <link href="../theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="../theme/css/pygments/native.css" rel="stylesheet">
+    <link href="../theme/css/pygments/monokai.css" rel="stylesheet">
     <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
         <link href="../static/custom.css" rel="stylesheet">
 
@@ -127,7 +127,7 @@ the following sections: </p>
 <li><a href="#mark">Marking timepoints in sound files</a></li>
 <li><a href="#annot">Annotating timepoints in sound files</a></li>
 </ol>
-<h2><a id="intro"></a> Introduction</h2>
+<h2 id="introduction"><a id="intro"></a> Introduction</h2>
 <p>A soundfile is hard to access data from when it is an undifferentiated
 blob. It's really helpful to have timestamps marking relevant events
 so that one can easily go right to the part in the recording corresponding to
@@ -203,7 +203,7 @@ item <span class="o">[]</span>:
 </pre></div>
 
 
-<h3>Instructions for tutorials</h3>
+<h3 id="instructions-for-tutorials">Instructions for tutorials</h3>
 <p>The files for the tutorials can be found in my
 <a href="http://media.krisyu.org/ldc-kiy/tutorials">here</a> in
 <code>annotating-audio-files/</code>
@@ -216,7 +216,7 @@ the files used and generated during the tutorial for your
 reference. The <code>your-turn/</code> directory is for you to play in and
 contains only the raw audio file the tutorial works with and one
 "blank" TextGrid file.</p>
-<h2><a id="text"></a>Headphones</h2>
+<h2 id="headphones"><a id="text"></a>Headphones</h2>
 <p>For analyzing sound files, it's helpful to be able to listen to them
 through headphones, especially if the signal is weak. Headphones help
 isolate the speech signal from the ambient sounds in the external
@@ -250,13 +250,13 @@ HD280 Pro, Superlux HD 668B, and Sennheiser Momentum. [<a href = "http://www.hea
 <p></p>
 
 <hr />
-<h2><a id="mark"></a>Marking timepoints in sound files</h2>
+<h2 id="marking-timepoints-in-sound-files"><a id="mark"></a>Marking timepoints in sound files</h2>
 <p>In this section, we explain how to perform <strong>segmentation</strong> of the
 sound file, i.e. how to set down timepoints marking relevant
 events. We'll be working with <code>20111213-2-kiy-ap-framedwordlist.wav</code>
 in <code>ldc-kiy/tutorials/annotating-audio-files/your-turn/</code>, which is
 already downsampled and includes only the consultant's channel.</p>
-<h3>Creating a new TextGrid</h3>
+<h3 id="creating-a-new-textgrid">Creating a new TextGrid</h3>
 <ol>
 <li>
 <p>Launch <code>Praat</code>.</p>
@@ -333,7 +333,7 @@ alt = "The LongSound: To Text Grid...dialog box" width = "450"><br>
 
 <p></p>
 
-<h3>Editing the TextGrid</h3>
+<h3 id="editing-the-textgrid">Editing the TextGrid</h3>
 <ol>
 <li>
 <p>Now there should be a new <code>TextGrid
@@ -392,9 +392,9 @@ Screencast: Marking interval boundary timepoints in the TextGrid.
 </p>
 
 <hr />
-<h2><a id="annot"></a>Annotating timepoints in sound files</h2>
+<h2 id="annotating-timepoints-in-sound-files"><a id="annot"></a>Annotating timepoints in sound files</h2>
 <p>We'll finish up with showing how to add textual labels to intervals, and show how to use a script to efficiently do this. </p>
-<h3>Adding text labels to intervals</h3>
+<h3 id="adding-text-labels-to-intervals">Adding text labels to intervals</h3>
 <p>In the screencast below, we show how to add textual annotations to a
 TextGrid file. The files used are in <code>tutorials/annotating-audio-filex/your_turn/</code>:</p>
 <ul>
@@ -418,7 +418,7 @@ TextGrid file. The files used are in <code>tutorials/annotating-audio-filex/your
 Screencast: Annotating interval boundary timepoints in the TextGrid.
 </p>
 
-<h3>Using a script to semi-automatically label intervals</h3>
+<h3 id="using-a-script-to-semi-automatically-label-intervals">Using a script to semi-automatically label intervals</h3>
 <p>Wait a minute---why are we typing all these labels out again in the
 TextGrids when they are already in our textfile
 <code>20111213-2-kiy-ap-framedwordlist.txt</code>(http://media.krisyu.org/ldc-kiy/tutorials/annotating-audio-files/20111213-2-kiy-ap-framedwordlist.txt)
@@ -431,7 +431,7 @@ spreadsheet in Excel in the section
 <a href="#excel-labels">Creating files for semi-automatic TextGrid annotation from Excel</a> and how to extract labels from a
 textfile using command-line utilities in the section <a href="#shell-labels">Extracting labels for TextGrids from text files in the shell</a>. Then we'll show how to use a Praat script to use these labels to
 annotate the intervals in the TextGrid in <a href="#praat-script">Semi-automatic TextGrid annotation with a script</a>.</p>
-<h4><a id = "excel-labels"></a> Creating files for semi-automatic TextGrid annotation from Excel</h4>
+<h4 id="creating-files-for-semi-automatic-textgrid-annotation-from-excel"><a id = "excel-labels"></a> Creating files for semi-automatic TextGrid annotation from Excel</h4>
 <ol>
 <li>Launch Excel and open <code>20111213-2-kiy-ap-framedwordlist.xlsx</code><a href="http://media.krisyu.org/ldc-kiy/tutorials/annotating-audio-files/20111213-2-kiy-ap-framedwordlist.xlsx">here</a></li>
 <li>
@@ -475,7 +475,7 @@ alt = "Make Plain Text in TextEdit." width = "450"><br>
 Screencast: Extracting labels for TextGrid annotation from a spreadsheet.
 </p>-->
 
-<h4><a id="shell-labels"></a> Extracting labels for TextGrids from text files in the shell</h4>
+<h4 id="extracting-labels-for-textgrids-from-text-files-in-the-shell"><a id="shell-labels"></a> Extracting labels for TextGrids from text files in the shell</h4>
 <p>We start with the tab-delimited text file <code>20111213-2-kiy-ap-framedwordlist.txt</code><a href="http://media.krisyu.org/ldc-kiy/tutorials/annotating-audio-files/20111213-2-kiy-ap-framedwordlist.txt">here</a>, which looks like this:</p>
 <div class="highlight"><pre><span></span>item    gloss   kirikiri        tone1   tone2   suffix  word1   word2
 <span class="m">1</span>       <span class="k">for</span> the bandicoot       paRai li        <span class="m">1</span>       R       benefactive     paRai   li
@@ -558,7 +558,7 @@ fivaa li
 </pre></div>
 
 
-<h4><a id="praat-script"></a> Semi-automatic TextGrid annotation with a script</h4>
+<h4 id="semi-automatic-textgrid-annotation-with-a-script"><a id="praat-script"></a> Semi-automatic TextGrid annotation with a script</h4>
 <p>In the screencast below, we show how to add textual annotations to a
 TextGrid file semi-automatically using a script. First we demonstrate
 how to annotated with the <code>kiy-labels.txt</code> file and then we annotate

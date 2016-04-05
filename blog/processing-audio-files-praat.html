@@ -36,7 +36,7 @@
         <link rel="stylesheet" href="../theme/css/bootstrap.cosmo.min.css" type="text/css"/>
     <link href="../theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="../theme/css/pygments/native.css" rel="stylesheet">
+    <link href="../theme/css/pygments/monokai.css" rel="stylesheet">
     <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
         <link href="../static/custom.css" rel="stylesheet">
 
@@ -134,7 +134,7 @@ the soundfile:<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footno
 <li><a href="#channel">Extracting a single channel from the file</a></li>
 <li><a href="#downsample">Downsampling the audio file</a></li>
 </ul>
-<h2><a id="intro"></a> Introduction</h2>
+<h2 id="introduction"><a id="intro"></a> Introduction</h2>
 <p>Praat is powerful cross-platform, free and
 <a href="http://www.fon.hum.uva.nl/praat/download_sources.html">open source</a> software created and maintained by Paul Boersma and David
 Weenink at the University of Amsterdam. It is widely used in phonetics
@@ -150,7 +150,7 @@ a few months, you might take a look and see if there's a newer version available
 The help files are extensive and include a set of
 <a href="http://www.fon.hum.uva.nl/praat/manual/Intro.html">introductory tutorials</a>. There
 is also a helpful <a href="http://uk.groups.yahoo.com/group/praat-users/">Praat Users group</a>.</p>
-<h3>Instructions for tutorials</h3>
+<h3 id="instructions-for-tutorials">Instructions for tutorials</h3>
 <p>The files for the tutorials can be found
 <a href="http://media.krisyu.org/ldc-kiy">this directory</a> under
 <code>tutorials/processing-audio-files</code>
@@ -164,7 +164,7 @@ tutorial for your reference (again, ignore the <code>batch-demo</code> directory
 play in and contains only the raw audio files the tutorial works with,
 and not any of the generated files from the tutorial. </p>
 <hr />
-<h2><a id="display"></a>Displaying audio file information</h2>
+<h2 id="displaying-audio-file-information"><a id="display"></a>Displaying audio file information</h2>
 <ol>
 <li>Launch <code>Praat</code>. </li>
 <li>
@@ -256,7 +256,7 @@ size down. We also want to
 extract just one of the 2 channels, the channel reserved for the
 consultant (Channel 1), for further data analysis.</p>
 <hr />
-<h2><a id="channel"></a>Extracting a channel</h2>
+<h2 id="extracting-a-channel"><a id="channel"></a>Extracting a channel</h2>
 <p>None of the file modification steps we show next can be performed on a
 <code>LongSound</code> object, so you'll need to open
 <code>20111213-1-kiy-ap-framedwordlist.wav</code> again using the <code>Open &gt; Read
@@ -316,7 +316,7 @@ width = "500">
 </li>
 </ol>
 <hr />
-<h2><a id="downsample"></a>Downsampling</h2>
+<h2 id="downsampling"><a id="downsample"></a>Downsampling</h2>
 <p>Below, we downsample the sampling rate of the file
  <code>20111213-1-kiy-ap-framedwordlist.wav</code> from 48kHz to 16kHz and write
  the downsampled file to a new file
