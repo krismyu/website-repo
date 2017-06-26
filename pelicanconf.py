@@ -135,18 +135,27 @@ RELATIVE_URLS = True
 
 # Plugins
 
-PLUGIN_PATHS=['../plugins/',]
-PLUGINS = [
-    'neighbors',
-    'render_math'
+PLUGIN_PATHS=['../plugins','/Users/amoebe/web/plugins']
+PLUGINS = ['neighbors',]#w,
+#    'render_math'
 #    'pelican_fontawesome',
 #    'pelican_gist',
 #    'render_math',
 #    'sitemap',
-    ]
+#    ]
 
 PYGMENTS_STYLE = 'monokai'
-MD_EXTENSIONS = ['toc', 'fenced_code', 'codehilite(css_class=highlight)', 'extra']
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.extra': {},
+        'markdown.extensions.toc': {},
+        'markdown.extensions.fenced_code': {},
+    },
+    'output_format': 'html5',
+}
+
+
 #LATEX = 'article' # Only use LaTeX for selected articles
 
 # Set static paths

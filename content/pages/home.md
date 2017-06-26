@@ -3,7 +3,7 @@ slug: home
 save_as: index.html
 URL:
 
-<!-- Time-stamp: <2016-04-03 19:27:49 amoebe>  -->
+<!-- Time-stamp: <2017-06-25 23:30:05 amoebe>  -->
 
 <div class="banner">
 	<div class="container">
@@ -46,9 +46,9 @@ ILC N422<br>
 	<h3><strong>Recent work:</strong></h3>
 		<h5>
 		<ul>
-			<li>Manuscript: <a href = "/research/index.html#research-phon-constituency">Advantages of constituency:
+			<li><a href = "http://fg.phil.hhu.de/2017/">Formal Grammar 2017</a> accepted paper: <a href = "https://github.com/krismyu/smo-constituency-feet/blob/master/fg-kmyu.pdf">Advantages of constituency:
 	computational perspectives on Samoan word prosody</a></li>
-			<li>Manuscript: <a href = "/research/index.html#research-interfaces">Tonal case marking in Samoan</a></li>
+			<li>Journal of Phonetics accepted paper: <a href = "https://github.com/krismyu/resolution/blob/master/yu2017-res.pdf">The role of time in phonetics spaces: temporal resolution in Cantonese tone perception</a></li>
 		</ul>
 	</h5>
 	</div>

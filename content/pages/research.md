@@ -1,12 +1,16 @@
 Title: Research
 Slug: research
-<!-- Time-stamp: <2016-04-05 09:08:25 amoebe> -->
+<!-- Time-stamp: <2017-06-25 23:36:02 amoebe> -->
 
 
 (See [CV](https://rawgithub.com/krismyu/kmyu-cv/master/kmyu-cv.pdf)
 for complete list and linked publications)
 
+Selected talk slides are available at [Speaker Deck](https://speakerdeck.com/krisyu). 
+
 ## Tonal and intonational categories 
+
+1. Kristine M. Yu (accepted). The role of time in phonetic spaces: temporal resolution in Cantonese tone perception. J. Phonetics. [[pdf](https://github.com/krismyu/resolution/blob/master/yu2017-res.pdf)]
 
 1. Kristine M. Yu, Sameer ud Dowla Khan, and Megha
    Sundara (under revision). Intonational phonology in Bengali and
@@ -16,13 +20,13 @@ for complete list and linked publications)
    tonal fieldwork. Language Documentation & Conservation 8, pp. 738-777.
       [[web](http://scholarspace.manoa.hawaii.edu/bitstream/handle/10125/24623/Yu.pdf?sequence=1), 
       [pdf](/pages/pdfs/yu2014-kiy.pdf), 
-      [supplementary materials](/blog/ldc-kiy-overview.html)]
+      [supplementary materials](http://www.krisyu.org/blog/posts/2013/06/ldc-kiy-overview/)]
 
 3. Kristine M. Yu and Hiu Wai Lam (2014). The role of creaky voice in
    Cantonese tone perception.[^1] JASA 136(3), pp. 1320-1333.
          [[web](http://scitation.aip.org/content/asa/journal/jasa/136/3/10.1121/1.4887462),
    [pdf](/pages/pdfs/yulam2014-jasa-cantcr.pdf), 
-      [supplementary materials](/blog/supp-material-cantonese-creak-perception.html)]
+      [supplementary materials](http://www.krisyu.org/blog/posts/2014/06/supp-material-cantonese-creak-perception/)]
 
 4. Kristine M. Yu, Sameer ud Dowla Khan, and Megha
    Sundara (2014). Intonational phonology in Bengali and English
@@ -34,17 +38,17 @@ Angeles. [[pdf](http://www.linguistics.ucla.edu/general/Dissertations/YuDisserta
 
 ## <a name="research-phon-constituency"></a>Phonological constituency
 
-1. Kristine M. Yu (submitted).  Advantages of constituency:
-   computational perspectives on Samoan word prosody. Comments welcome! [[manuscript](/pages/pdfs/yu-smo-constituency.pdf), [code](https://github.com/krismyu/smo-constituency-feet)]
+1. Kristine M. Yu (to appear). Proceedings of Formal Grammar 2017. Advantages of constituency:
+   computational perspectives on Samoan word prosody. [[pdf](https://github.com/krismyu/smo-constituency-feet/blob/master/fg-kmyu.pdf), [code](https://github.com/krismyu/smo-constituency-feet)]
 2. Kie Zuraw, Kristine M. Yu, and Robyn Orfitelli (2014). The word-level
    prosody of Samoan.[^2] Phonology 31.02, pp. 271-327. [[web](http://dx.doi.org/10.1017/S095267571400013X), [pdf](/pages/pdfs/zurawyuorfitelli2014.pdf)]
 
 
 ## <a name="research-interfaces"></a>Prosodic interfaces 
 
-1. Kristine M. Yu (submitted). Tonal marking of absolutive
-   case in Samoan. Comments welcome! [[manuscript](/pages/pdfs/yu-smo-abs.pdf)]
-1. Kristine M. Yu and Edward Stabler (submitted). (In)variability in Samoan prosody and consequences for syntactic parsing.
+1. Kristine M. Yu (under revision). Tonal marking of absolutive
+   case in Samoan. 
+1. Kristine M. Yu and Edward Stabler (accepted). (In)variability in Samoan prosody and consequences for syntactic parsing. Laboratory Phonology.
 2. Kristine M. Yu. (2011). The sound of ergativity:
       morphosyntax-prosody mapping in Samoan. In: Suzi Lima, Kevin
       Mullin, Brian Smith, eds., Proceedings of the 39th Annual
@@ -53,7 +57,7 @@ Angeles. [[pdf](http://www.linguistics.ucla.edu/general/Dissertations/YuDisserta
     MA, pps.  825
       -- 838. [[pdf](/pages/pdfs/yu2011-nels39-samoan.pdf)]
       (Note:
-      this is also frequently cited as Yu (2009).)
+      this is sometimes (mistakenly) cited as Yu (2009).)
 
 ## Other
 
