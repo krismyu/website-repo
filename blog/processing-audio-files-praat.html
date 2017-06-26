@@ -13,13 +13,13 @@
 
         <meta name="author" content="Kristine Yu" />
         <meta name="keywords" content="ldc-kiy,fieldwork,coding,shell,praat,audio,tutorial" />
-        <meta name="description" content="This tutorial introduces how to process audio files from fieldwork recordings with Praat. See the tutorial Processing audio (with SoX) for the sister tutorial using SoX command line utilities. Following an introductory section, the tutorial shows how to use Praat information about a soundfile ..." />
+        <meta name="description" content="This tutorial introduces how to process audio files from fieldwork recordings with Praat. See the tutorial Processing audio (with SoX) for the sister tutorial using SoX command line utilities. Following an introductory section, the tutorial shows how to use Praat information about a soundfile and make two different modifications to …" />
 
         <meta property="og:site_name" content="Kristine M. Yu" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Processing audio files (with Praat)"/>
         <meta property="og:url" content="../blog/processing-audio-files-praat.html"/>
-        <meta property="og:description" content="This tutorial introduces how to process audio files from fieldwork recordings with Praat. See the tutorial Processing audio (with SoX) for the sister tutorial using SoX command line utilities. Following an introductory section, the tutorial shows how to use Praat information about a soundfile ..."/>
+        <meta property="og:description" content="This tutorial introduces how to process audio files from fieldwork recordings with Praat. See the tutorial Processing audio (with SoX) for the sister tutorial using SoX command line utilities. Following an introductory section, the tutorial shows how to use Praat information about a soundfile and make two different modifications to …"/>
         <meta property="article:published_time" content="2013-06-24" />
             <meta property="article:section" content="articles" />
             <meta property="article:tag" content="ldc-kiy" />
@@ -128,13 +128,13 @@ the sister tutorial using <a href="http://sox.sourceforge.net">SoX</a> command l
 <p>Following an <a href = "#intro">introductory section</a>, the tutorial shows how to use <a href =
 "http://www.praat.org/">Praat</a> 
 information about a soundfile and make two different modifications to
-the soundfile:<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></p>
+the soundfile:<sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup></p>
 <ul>
 <li><a href="#display">Displaying information about the audio file</a></li>
 <li><a href="#channel">Extracting a single channel from the file</a></li>
 <li><a href="#downsample">Downsampling the audio file</a></li>
 </ul>
-<h2 id="introduction"><a id="intro"></a> Introduction</h2>
+<h2 id="wzxhzdk8wzxhzdk9-introduction"><a id="intro"></a> Introduction</h2>
 <p>Praat is powerful cross-platform, free and
 <a href="http://www.fon.hum.uva.nl/praat/download_sources.html">open source</a> software created and maintained by Paul Boersma and David
 Weenink at the University of Amsterdam. It is widely used in phonetics
@@ -163,8 +163,8 @@ all the files used in the tutorial. Ignore the other sub-directory in
 tutorial for your reference (again, ignore the <code>batch-demo</code> directory). The <code>your-turn/</code> directory is for you to
 play in and contains only the raw audio files the tutorial works with,
 and not any of the generated files from the tutorial. </p>
-<hr />
-<h2 id="displaying-audio-file-information"><a id="display"></a>Displaying audio file information</h2>
+<hr>
+<h2 id="wzxhzdk10wzxhzdk11displaying-audio-file-information"><a id="display"></a>Displaying audio file information</h2>
 <ol>
 <li>Launch <code>Praat</code>. </li>
 <li>
@@ -177,7 +177,8 @@ alt = "Open long sound in Praat"
 width = "400">
 <figcaption> <tt>Open long sound</tt> command.</figcaption>
 </figure>
-</div><p></p></p>
+</div></p>
+
 <p>A <code>LongSound</code> is distinct from a <code>Sound</code> object type in Praat. As
 it says in the <a href="http://www.fon.hum.uva.nl/praat/manual/LongSound.html">manual</a>:</p>
 <blockquote>
@@ -208,7 +209,7 @@ sounds that are too long to read into memory as a Sound object
    selected, click on the <code>Info</code> button at the bottom of the object
    window, as shown below. This will pop up the <code>Praat Info</code> window
    with information about the audio file displayed, including the file
-   format, duration of the file, sampling rate, and bit depth.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup></p>
+   format, duration of the file, sampling rate, and bit depth.<sup id="fnref-2"><a class="footnote-ref" href="#fn-2">2</a></sup></p>
 <p><div align = "center">
 <figure>
 <img src="/img/2013/06/praat-info.jpg"
@@ -216,19 +217,20 @@ alt = "Display info about the LongSound object"
 width = "500">
 <figcaption> Display info about the LongSound object.</figcaption>
 </figure>
-</div><p></p></p>
+</div></p>
+
 </li>
 </ol>
 <p>Here's what it says in the <code>Praat Info</code> window:</p>
-<div class="highlight"><pre><span></span>Object id: 1
+<div class="highlight"><pre><span></span>Object id: <span class="m">1</span>
 Object type: Sound
-Object name: 20111213-1-kiy-ap-framedwordlist
-Date: Thu Jun <span class="m">27</span> 16:45:21 2013
+Object name: <span class="m">20111213</span>-1-kiy-ap-framedwordlist
+Date: Thu Jun <span class="m">27</span> <span class="m">16</span>:45:21 <span class="m">2013</span>
 
-Duration: 347.832 seconds
+Duration: <span class="m">347</span>.832 seconds
 File name: /Users/amoebe/Documents/mind/proj/kiy-ldc/tutorials/processing-audio-files/your-turn/20111213/raw/20111213-1-kiy-ap-framedwordlist.wav
 File type: WAV
-Number of channels: 2
+Number of channels: <span class="m">2</span>
 Encoding: linear <span class="m">16</span> bit little-endian
 Sampling frequency: <span class="m">48000</span> Hz
 Size: <span class="m">16695936</span> samples
@@ -255,8 +257,8 @@ speech so we can <a href="#downsample">downsample</a> the file to keep the file
 size down. We also want to
 extract just one of the 2 channels, the channel reserved for the
 consultant (Channel 1), for further data analysis.</p>
-<hr />
-<h2 id="extracting-a-channel"><a id="channel"></a>Extracting a channel</h2>
+<hr>
+<h2 id="wzxhzdk12wzxhzdk13extracting-a-channel"><a id="channel"></a>Extracting a channel</h2>
 <p>None of the file modification steps we show next can be performed on a
 <code>LongSound</code> object, so you'll need to open
 <code>20111213-1-kiy-ap-framedwordlist.wav</code> again using the <code>Open &gt; Read
@@ -295,7 +297,8 @@ alt = "Read from file in Praat"
 width = "500">
 <figcaption> <tt>Extract one channel</tt> command.</figcaption>
 </figure>
-</div><p></p></p>
+</div></p>
+
 </li>
 <li>
 <p>In the <code>Sound: Extract channel</code> dialog box, type <code>1</code> in <code>Channel
@@ -315,8 +318,8 @@ width = "500">
    examine the extracted channel. </p>
 </li>
 </ol>
-<hr />
-<h2 id="downsampling"><a id="downsample"></a>Downsampling</h2>
+<hr>
+<h2 id="wzxhzdk14wzxhzdk15downsampling"><a id="downsample"></a>Downsampling</h2>
 <p>Below, we downsample the sampling rate of the file
  <code>20111213-1-kiy-ap-framedwordlist.wav</code> from 48kHz to 16kHz and write
  the downsampled file to a new file
@@ -368,22 +371,22 @@ width = "500">
 </li>
 </ol>
 <div class="footnote">
-<hr />
+<hr>
 <ol>
-<li id="fn:1">
+<li id="fn-1">
 <p>I don't know of a way to reduce bit depth in Praat. See the
 <a href="../processing-audio-files-sox/#bit">SoX tutorial</a> for a way to do it
 with SoX. There is also a way to do it in Audacity by setting <code>Default
 Sample Format</code> in <code>Preferences &gt; Quality &gt;</code> before opening the sound
 file in the program, as described in the
-<a href="http://manual.audacityteam.org/man/Quality_Preferences">manual</a>.&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<a href="http://manual.audacityteam.org/man/Quality_Preferences">manual</a>.&#160;<a class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn:2">
+<li id="fn-2">
 <p>It's critical to open the file as a <code>LongSound</code> to get this
 information. If you open the file as a <code>Sound</code> object using <code>Open &gt;
 Read from file...</code>, clicking on the <code>Info</code> button will display (after
 a bit of a wait) properties of the signal like average, min, and max amplitude and will
-not display file format or bit depth.&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+not display file format or bit depth.&#160;<a class="footnote-backref" href="#fnref-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -452,7 +455,7 @@ not display file format or bit depth.&#160;<a class="footnote-backref" href="#fn
       <hr>
       <div class="row">
          <div class="col-xs-10">&copy; 2016 Kristine M. Yu
-            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>

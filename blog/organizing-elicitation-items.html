@@ -13,13 +13,13 @@
 
         <meta name="author" content="Kristine Yu" />
         <meta name="keywords" content="ldc-kiy,fieldwork,tutorial" />
-        <meta name="description" content="In this tutorial, we cover strategies for organizing data within an elicitation session as well as across elicitation sessions, including: Using dictionaries as data structures Working with spreadsheets Working with text files in the shell Organizing files The section Working with text files in the shell can be skipped for ..." />
+        <meta name="description" content="In this tutorial, we cover strategies for organizing data within an elicitation session as well as across elicitation sessions, including: Using dictionaries as data structures Working with spreadsheets Working with text files in the shell Organizing files The section Working with text files in the shell can be skipped for …" />
 
         <meta property="og:site_name" content="Kristine M. Yu" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Organizing elicitation items"/>
         <meta property="og:url" content="../blog/organizing-elicitation-items.html"/>
-        <meta property="og:description" content="In this tutorial, we cover strategies for organizing data within an elicitation session as well as across elicitation sessions, including: Using dictionaries as data structures Working with spreadsheets Working with text files in the shell Organizing files The section Working with text files in the shell can be skipped for ..."/>
+        <meta property="og:description" content="In this tutorial, we cover strategies for organizing data within an elicitation session as well as across elicitation sessions, including: Using dictionaries as data structures Working with spreadsheets Working with text files in the shell Organizing files The section Working with text files in the shell can be skipped for …"/>
         <meta property="article:published_time" content="2013-06-23" />
             <meta property="article:section" content="articles" />
             <meta property="article:tag" content="ldc-kiy" />
@@ -123,7 +123,7 @@ rather than working with command-line utilities.</p>
 <p>The files referred to in the tutorial can be found in
 <a href="http://media.krisyu.org/ldc-kiy/">this directory</a> in
 the <code>tutorials/organizing-elicitation-items/</code> <a href="http://media.krisyu.org/ldc-kiy/tutorials/organizing-elicitation-items/">sub-directory</a>.</p>
-<h2 id="using-dictionaries-as-data-structures"><a id="hash"></a>Using dictionaries as data structures</h2>
+<h2 id="wzxhzdk28wzxhzdk29using-dictionaries-as-data-structures"><a id="hash"></a>Using dictionaries as data structures</h2>
 <p>Dictionaries are abstract data structures in widespread use in
 computer science that associate unique, immutable <strong>keys</strong> with
 <strong>values</strong>. The idea of a dictionary is useful not only for practical
@@ -136,7 +136,7 @@ elicitation item in our corpus of fieldwork data? For instance, take
 <em>paRai giRu</em> `bandicoot's elbow'. During our elicitation session, our
 orthographic representation for this was <em>paRai giRu</em>. It might be
 transparent to simply identify this elicitation item as <code>paRai giRu</code>
-and name the soundfile for this item <code>paRai giRu.wav</code>,<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup> but this strategy for
+and name the soundfile for this item <code>paRai giRu.wav</code>,<sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup> but this strategy for
 nomenclature could be problematic for the following reasons:</p>
 <ul>
 <li>
@@ -216,7 +216,7 @@ a unique, immutable barcode to each elicitation item and keep track of
 the <strong>values</strong> associated with the <strong>keys</strong> for elicitation
 items. First, we'll discuss generating tables in spreadsheets in Excel. Then
 we'll discuss generating tables in text files.</p>
-<p>We give two example tables below,<sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup> where the keys are listed in the
+<p>We give two example tables below,<sup id="fnref-3"><a class="footnote-ref" href="#fn-3">3</a></sup> where the keys are listed in the
 <code>item</code> column as integers 1, 2, 3, 4, 5, .... These keys are really
 shorthand for keys like <code>20111213-1-kiy-ap-framedwordlist-1</code>,
 <code>20111213-1-kiy-ap-framedwordlist-2</code>, etc., which are the full keys used for
@@ -463,8 +463,8 @@ approaches are available in other spreadsheet software programs.</p>
 </tbody>
 </table>
 
-<hr />
-<h2 id="working-with-spreadsheets"><a id="spreadsheet"></a>Working with spreadsheets</h2>
+<hr>
+<h2 id="wzxhzdk30wzxhzdk31working-with-spreadsheets"><a id="spreadsheet"></a>Working with spreadsheets</h2>
 <p>For Table 2 above, we only filled in a portion of the columns by
 hand. Many of the columns are fully specified by other columns. For
 instance, <code>sent.kiy</code> entries are simply concatenated from <code>tone.1</code> and
@@ -532,8 +532,8 @@ width="800" /></a> </p>
 the first few rows in (1, 2, 3) and then click and drag to select
 those three cells, you can use the same <em>fill down</em> trick described
 above to fill in the rest of the item entries.</p>
-<hr />
-<h2 id="working-with-text-files-in-the-shell"><a id="text"></a>Working with text files in the shell</h2>
+<hr>
+<h2 id="wzxhzdk42wzxhzdk43working-with-text-files-in-the-shell"><a id="text"></a>Working with text files in the shell</h2>
 <p>For command line aficionados (see
 <a href="..//processing-audio-files-sox/#intro">the introductory section</a>
 of
@@ -551,11 +551,11 @@ i.e. newline characters, across platforms.</p>
 <p>The <code>organizing-elicitation-items/</code> directory contains three
 tab-delimited text files and two CSV (comma separated values) files:</p>
 <div class="highlight"><pre><span></span>amoebe@moebius :: ls *.txt*
-20111213-1-kiy-ap-framedwordlist.txt       20111215-2-kiy-ap-framedwordlist.txt.unix
-20111215-2-kiy-ap-framedwordlist.txt
+<span class="m">20111213</span>-1-kiy-ap-framedwordlist.txt       <span class="m">20111215</span>-2-kiy-ap-framedwordlist.txt.unix
+<span class="m">20111215</span>-2-kiy-ap-framedwordlist.txt
 
 amoebe@moebius :: ls *.csv*
-20111215-2-kiy-ap-framedwordlist.csv       20111215-2-kiy-ap-framedwordlist.csv.unix
+<span class="m">20111215</span>-2-kiy-ap-framedwordlist.csv       <span class="m">20111215</span>-2-kiy-ap-framedwordlist.csv.unix
 </pre></div>
 
 
@@ -567,7 +567,7 @@ endings. If we do a simple <code>cat</code> command to display
 a single line (you need to drag the scroll bar at the bottom of the
 code snippet window in order to see this!).</p>
 <div class="highlight"><pre><span></span><span class="c1"># Extract from output of cat command</span>
-amoebe@moebius :: cat 20111215-2-kiy-ap-framedwordlist.txt
+amoebe@moebius :: cat <span class="m">20111215</span>-2-kiy-ap-framedwordlist.txt
 1tem    kErd.1  ndEd.2  fuwa    antss.1 centipedeloss.vesees    T1ne.1  T1ne.2  T1.T1e  kE ndE fuwa.    The ant se2s the ckEtipedefa    fuwa    ant younger.sibling sees    T1  T2  T1.T2   kE fa fuwa. The ant se3s the ykEnger.snOling. fuwa  ant meat    sees    T1  T2  T1.T2   kE nO fuwa. The ant sees the m4at.    kE    fO  fuwa    ant wallaby sees    T1  T3  T1.T3   kE fO fuwa. The ant sees the w5llaby. kE    fO  fuwa    ant honeybee    sees    T1  T3  T1.T3   kE fO fuwa. The ant se6s the hkEeybee.ya    fuwa    ant mother  sees    T1  T5  T1.T5   kE ya fuwa. The ant sees the m7ther.  kE    fa  fuwa    ant sago.grub   sees    T1  T5  T1.T5   kE fa fuwa. The ant se<span class="sb">```</span>
 </pre></div>
 
@@ -575,7 +575,7 @@ amoebe@moebius :: cat 20111215-2-kiy-ap-framedwordlist.txt
 <p>If we invoke <code>cat -v</code> to display non-printing characters, we can see
 that line endings are delimited with <code>^M</code>:</p>
 <div class="highlight"><pre><span></span><span class="c1"># Extract from output of cat -v command which prints non-printing characters</span>
-amoebe@moebius :: cat -v 20111215-2-kiy-ap-framedwordlist.txt
+amoebe@moebius :: cat -v <span class="m">20111215</span>-2-kiy-ap-framedwordlist.txt
 item    word.1  word.2  verb    gloss.1 gloss.2 gloss.verb  tone.1  tone.2  bitone  sent.kiy    sent.eng^M1 kE  ndE fuwa    ant centipede   sees    T1  T1  T1.T1   kE ndE fuwa.    The ant sees the centipede.^M2  kE  fa  fuwa    ant younger.sibling sees    T1  T2  T1.T2   kE fa fuwa. The ant sees the younger.sibling.^M3    kE  nO  fuwa    ant meat    sees    T1  T2  T1.T2   kE nO fuwa. The ant sees the meat.^M4   kE  fO  fuwa    ant wallaby sees    T1  TT1.T3  kE fO fuwa. The ant sees the wallaby.^M5    kE  fO  fuwa    ant honeybee    sees    TT3 T1.T3   kE fO fuwa. The ant sees the honeybee.^M
 </pre></div>
 
@@ -583,7 +583,7 @@ item    word.1  word.2  verb    gloss.1 gloss.2 gloss.verb  tone.1  tone.2  bito
 <p>These are non-UNIX line endings used for Mac as well as
 Windows/DOS. Fortunately, we can convert the line endings using a
 variety of command-line utilities, such as the dedicated utility
-<a href="https://ccrma.stanford.edu/~craig/utility/flip/">flip</a>,<sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup> as well as
+<a href="https://ccrma.stanford.edu/~craig/utility/flip/">flip</a>,<sup id="fnref-3"><a class="footnote-ref" href="#fn-3">3</a></sup> as well as
 <a href="http://kb.iu.edu/data/acux.html">standard</a>
 <a href="http://hints.macworld.com/article.php?story=20001206164827794">command</a>
 <a href="http://superuser.com/questions/71507/convert-unix-line-endings-to-windows">utilities</a>
@@ -608,7 +608,7 @@ with the modified file with converted line endings.</strong> You can find the
 <code>flip</code> executable in the <code>flip/</code> directory in
 <code>tutorials/organizing-elicitation-items/</code>, which I compiled from
 <a href="https://ccrma.stanford.edu/~craig/utility/flip/flip.cpp">source</a>
-using the C++ compiler <code>g++</code> on Mac OSX:<sup id="fnref:4"><a class="footnote-ref" href="#fn:4" rel="footnote">4</a></sup></p>
+using the C++ compiler <code>g++</code> on Mac OSX:<sup id="fnref-4"><a class="footnote-ref" href="#fn-4">4</a></sup></p>
 <div class="highlight"><pre><span></span>g++ -o flip flip.cpp
 </pre></div>
 
@@ -620,18 +620,18 @@ line endings to UNIX line endings. Since <code>flip</code> converts the line
 endings in the orginal file and overwrites it, we first copy the text
 files to new text files named with <code>.unix</code> suffixes.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Convert line endings from Mac to Unix for tab-delimited file</span>
-cp 20111215-2-kiy-ap-framedwordlist.txt 20111215-2-kiy-ap-framedwordlist.txt.unix
-flip -u 20111215-2-kiy-ap-framedwordlist.txt.unix
+cp <span class="m">20111215</span>-2-kiy-ap-framedwordlist.txt <span class="m">20111215</span>-2-kiy-ap-framedwordlist.txt.unix
+flip -u <span class="m">20111215</span>-2-kiy-ap-framedwordlist.txt.unix
 
 <span class="c1"># Convert line endings from Mac to Unix for CSV file</span>
-cp 20111215-2-kiy-ap-framedwordlist.csv 20111215-2-kiy-ap-framedwordlist.csv.unix
-flip -u 20111215-2-kiy-ap-framedwordlist.csv.unix
+cp <span class="m">20111215</span>-2-kiy-ap-framedwordlist.csv <span class="m">20111215</span>-2-kiy-ap-framedwordlist.csv.unix
+flip -u <span class="m">20111215</span>-2-kiy-ap-framedwordlist.csv.unix
 </pre></div>
 
 
 <p>Now the output of <code>cat</code> prints with proper line breaks:</p>
 <div class="highlight"><pre><span></span><span class="c1"># Extract from output of cat command after flip line ending conversion</span>
-amoebe@moebius :: cat 20111215-2-kiy-ap-framedwordlist.txt.unix
+amoebe@moebius :: cat <span class="m">20111215</span>-2-kiy-ap-framedwordlist.txt.unix
 item    word.1  word.2  verb    gloss.1 gloss.2 gloss.verb  tone.1  tone.2  bitone  sent.kiy    sent.eng
 <span class="m">1</span>   kE  ndE fuwa    ant centipede   sees    T1  T1  T1.T1   kE ndE fuwa.    The ant sees the centipede.
 <span class="m">2</span>   kE  fa  fuwa    ant younger.sibling sees    T1  T2  T1.T2   kE fa fuwa. The ant sees the younger.sibling.
@@ -650,7 +650,7 @@ Let's start with just the first nine columns, <code>item</code>, <code>word.1</c
 <code>20111215-2-kiy-ap-framedwordlist-initial.txt</code>. </p>
 <div class="highlight"><pre><span></span><span class="c1"># Extract only columns that can&#39;t be automatically filled in, columns 1-9</span>
 <span class="c1"># Write to file 20111215-2-kiy-ap-framedwordlist-initial.txt</span>
-cut -f1-9 20111215-2-kiy-ap-framedwordlist.txt.unix &gt; 20111215-2-kiy-ap-framedwordlist-initial.txt
+cut -f1-9 <span class="m">20111215</span>-2-kiy-ap-framedwordlist.txt.unix &gt; <span class="m">20111215</span>-2-kiy-ap-framedwordlist-initial.txt
 </pre></div>
 
 
@@ -663,12 +663,12 @@ is to use the <a href="http://www.grymoire.com/Unix/Awk.html"><code>awk</code> c
 <span class="c1"># We pipe the output through head -3 to print just the first 3 lines of the output file</span>
 
 <span class="c1"># $8.&quot;$9 indicates field 8, followed by a &quot;.&quot;, followed by field 9</span>
-awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{print $0,&quot;\t&quot;$8&quot;.&quot;$9}&#39;</span> 20111215-2-kiy-ap-framedwordlist-initial.txt <span class="p">|</span> head -3
+awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{print $0,&quot;\t&quot;$8&quot;.&quot;$9}&#39;</span> <span class="m">20111215</span>-2-kiy-ap-framedwordlist-initial.txt <span class="p">|</span> head -3
 </pre></div>
 
 
 <p>to get the output:</p>
-<div class="highlight"><pre><span></span>amoebe@moebius :: awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{print $0,&quot;\t&quot;$8&quot;.&quot;$9}&#39;</span> 20111215-2-kiy-ap-framedwordlist-initial.txt <span class="p">|</span> head -3
+<div class="highlight"><pre><span></span>amoebe@moebius :: awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{print $0,&quot;\t&quot;$8&quot;.&quot;$9}&#39;</span> <span class="m">20111215</span>-2-kiy-ap-framedwordlist-initial.txt <span class="p">|</span> head -3
 item    word.1  word.2  verb    gloss.1 gloss.2 gloss.verb  tone.1  tone.2  tone.1.tone.2
 <span class="m">1</span>   kE  ndE fuwa    ant centipede   sees    T1  T1  T1.T1
 <span class="m">2</span>   kE  fa  fuwa    ant younger.sibling sees    T1  T2  T1.T2
@@ -679,12 +679,12 @@ item    word.1  word.2  verb    gloss.1 gloss.2 gloss.verb  tone.1  tone.2  tone
 <div class="highlight"><pre><span></span><span class="c1"># $2, $3, $4 indicates field 2 followed by field 3 followed by field,</span>
 <span class="c1">#  with each field delimited by spaces (the default delimiter for awk)</span>
 
-awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{print $0,&quot;\t&quot;$2,$3,$4}&#39;</span> 20111215-2-kiy-ap-framedwordlist-initial.txt <span class="p">|</span> head -3
+awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{print $0,&quot;\t&quot;$2,$3,$4}&#39;</span> <span class="m">20111215</span>-2-kiy-ap-framedwordlist-initial.txt <span class="p">|</span> head -3
 </pre></div>
 
 
 <p>This generates the output:</p>
-<div class="highlight"><pre><span></span>amoebe@moebius :: awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{print $0,&quot;\t&quot;$2,$3,$4}&#39;</span> 20111215-2-kiy-ap-framedwordlist-initial.txt <span class="p">|</span> head -3
+<div class="highlight"><pre><span></span>amoebe@moebius :: awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{print $0,&quot;\t&quot;$2,$3,$4}&#39;</span> <span class="m">20111215</span>-2-kiy-ap-framedwordlist-initial.txt <span class="p">|</span> head -3
 item    word.1  word.2  verb    gloss.1 gloss.2 gloss.verb  tone.1  tone.2  word.1 word.2 verb
 <span class="m">1</span>   kE  ndE fuwa    ant centipede   sees    T1  T1  kE ndE fuwa
 <span class="m">2</span>   kE  fa  fuwa    ant younger.sibling sees    T1  T2  kE fa fuwa
@@ -694,12 +694,12 @@ item    word.1  word.2  verb    gloss.1 gloss.2 gloss.verb  tone.1  tone.2  word
 <p>Finally, we generate the <code>sent.eng</code> column as follows:</p>
 <div class="highlight"><pre><span></span><span class="c1"># This is similar to the previous command, but with some &quot;the&quot;&#39;s</span>
 <span class="c1"># concatenated in</span>
-awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{print $0,&quot;\t&quot;&quot;The&quot;, $5, $7, &quot;the&quot;, $6&quot;.&quot;}&#39;</span> 20111215-2-kiy-ap-framedwordlist-initial.txt <span class="p">|</span> head -3
+awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{print $0,&quot;\t&quot;&quot;The&quot;, $5, $7, &quot;the&quot;, $6&quot;.&quot;}&#39;</span> <span class="m">20111215</span>-2-kiy-ap-framedwordlist-initial.txt <span class="p">|</span> head -3
 </pre></div>
 
 
 <p>with the output:</p>
-<div class="highlight"><pre><span></span>amoebe@moebius :: awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{print $0,&quot;\t&quot;&quot;The&quot;, $5, $7, &quot;the&quot;, $6&quot;.&quot;}&#39;</span> 20111215-2-kiy-ap-framedwordlist-initial.txt <span class="p">|</span> head -3
+<div class="highlight"><pre><span></span>amoebe@moebius :: awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{print $0,&quot;\t&quot;&quot;The&quot;, $5, $7, &quot;the&quot;, $6&quot;.&quot;}&#39;</span> <span class="m">20111215</span>-2-kiy-ap-framedwordlist-initial.txt <span class="p">|</span> head -3
 item    word.1  word.2  verb    gloss.1 gloss.2 gloss.verb  tone.1  tone.2  The gloss.1 gloss.verb the gloss.2.
 <span class="m">1</span>   kE  ndE fuwa    ant centipede   sees    T1  T1  The ant sees the centipede.
 <span class="m">2</span>   kE  fa  fuwa    ant younger.sibling sees    T1  T2  The ant sees the younger.sibling.
@@ -708,36 +708,36 @@ item    word.1  word.2  verb    gloss.1 gloss.2 gloss.verb  tone.1  tone.2  The 
 
 <p>One (verbose) way to chain these commands is to pipe them to each
 other. We can redirect the output to the file <code>20111215-2-kiy-ap-framedwordlist-new.txt</code>.</p>
-<div class="highlight"><pre><span></span>awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{print $0,&quot;\t&quot;$8&quot;.&quot;$9}&#39;</span> 20111215-2-kiy-ap-framedwordlist-initial.txt <span class="p">|</span> awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{print $0,&quot;\t&quot;$2,$3,$4}&#39;</span> <span class="p">|</span> awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{print $0,&quot;\t&quot;&quot;The&quot;, $5, $7, &quot;the&quot;, $6&quot;.&quot;}&#39;</span> &gt; 20111215-2-kiy-ap-framedwordlist-new.txt<span class="sb">```</span>
+<div class="highlight"><pre><span></span>awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{print $0,&quot;\t&quot;$8&quot;.&quot;$9}&#39;</span> <span class="m">20111215</span>-2-kiy-ap-framedwordlist-initial.txt <span class="p">|</span> awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{print $0,&quot;\t&quot;$2,$3,$4}&#39;</span> <span class="p">|</span> awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{print $0,&quot;\t&quot;&quot;The&quot;, $5, $7, &quot;the&quot;, $6&quot;.&quot;}&#39;</span> &gt; <span class="m">20111215</span>-2-kiy-ap-framedwordlist-new.txt<span class="sb">```</span>
 
 Examining the first three lines of
-<span class="sb">`</span>20111215-2-kiy-ap-framedwordlist-new.txt<span class="sb">`</span> shows that we accomplished
+<span class="sb">`</span><span class="m">20111215</span>-2-kiy-ap-framedwordlist-new.txt<span class="sb">`</span> shows that we accomplished
 what we want, except the table headers are screwed up.
 
 <span class="sb">```</span>bash
-amoebe@moebius :: head -3 20111215-2-kiy-ap-framedwordlist-new.txtitem  word.1  word.2  verb    gloss.1 gloss.2 gloss.verb  tone.1  tone.2  tone.1.tone.2   word.1 word.2 verb  The gloss.1 gloss.verb the gloss.2.
+amoebe@moebius :: head -3 <span class="m">20111215</span>-2-kiy-ap-framedwordlist-new.txtitem  word.1  word.2  verb    gloss.1 gloss.2 gloss.verb  tone.1  tone.2  tone.1.tone.2   word.1 word.2 verb  The gloss.1 gloss.verb the gloss.2.
 <span class="m">1</span>   kE  ndE fuwa    ant centipede   sees    T1  T1  T1.T1   kE ndE fuwa     The ant sees the centipede.
 <span class="m">2</span>   kE  fa  fuwa    ant younger.sibling sees    T1  T2  T1.T2   kE fa fuwa  The ant sees the younger.sibling.
 </pre></div>
 
 
 <p>We can correct the table headers by targeting just the first row
-using <code>NR==1</code>, and replacing fields <span class="math">\(10-\)</span>12 with the appropriate
+using <code>NR==1</code>, and replacing fields $10-$12 with the appropriate
 heading. We write to the file <code>20111215-2-kiy-ap-framedwordlist-final.txt</code>.</p>
-<div class="highlight"><pre><span></span>awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;NR==1 {$10=&quot;bitone&quot;;$11=&quot;sent.kiy&quot;;$12=&quot;sent.eng&quot;}1&#39;</span> 20111215-2-kiy-ap-framedwordlist-new.txt &gt; 20111215-2-kiy-ap-framedwordlist-final.txt
+<div class="highlight"><pre><span></span>awk -F <span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;NR==1 {$10=&quot;bitone&quot;;$11=&quot;sent.kiy&quot;;$12=&quot;sent.eng&quot;}1&#39;</span> <span class="m">20111215</span>-2-kiy-ap-framedwordlist-new.txt &gt; <span class="m">20111215</span>-2-kiy-ap-framedwordlist-final.txt
 </pre></div>
 
 
 <p>A quick examination of the output file <code>20111215-2-kiy-ap-framedwordlist-final.txt</code> shows we got what we wanted.</p>
-<div class="highlight"><pre><span></span>amoebe@moebius :: head -3 20111215-2-kiy-ap-framedwordlist-final.txt 
+<div class="highlight"><pre><span></span>amoebe@moebius :: head -3 <span class="m">20111215</span>-2-kiy-ap-framedwordlist-final.txt 
 item word.1 word.2 verb gloss.1 gloss.2 gloss.verb tone.1 tone.2  bitone sent.kiy sent.eng
 <span class="m">1</span>   kE  ndE fuwa    ant centipede   sees    T1  T1  T1.T1   kE ndE fuwa     The ant sees the centipede.
 <span class="m">2</span>   kE  fa  fuwa    ant younger.sibling sees    T1  T2  T1.T2   kE fa fuwa  The ant sees the younger.sibling.
 </pre></div>
 
 
-<hr />
-<h2 id="organizing-files"><a id="files"></a>Organizing files</h2>
+<hr>
+<h2 id="wzxhzdk44wzxhzdk45organizing-files"><a id="files"></a>Organizing files</h2>
 <p>One issue that comes up with having a lot of recorded data is the
 proliferation of audio files that needs to be dealt with. Some tips
 for managing the multitudes of files are:</p>
@@ -789,7 +789,7 @@ for managing the multitudes of files are:</p>
 data from the
 <a href="http://media.krisyu.org/ldc-kiy/tutorials/organizing-elicitation-items/">the organizing-elicitation-tiems sub-directory</a>
 in the directory <code>data/</code>, which contains all of the data recorded and
-associated files.<sup id="fnref:5"><a class="footnote-ref" href="#fn:5" rel="footnote">5</a></sup> </p>
+associated files.<sup id="fnref-5"><a class="footnote-ref" href="#fn-5">5</a></sup> </p>
 <p>Each elicitation session date gets its own directory in <code>data/</code>:</p>
 <div class="highlight"><pre><span></span>data
 ├── 20111207
@@ -945,90 +945,33 @@ named with a suffix that is the elicitation item ID,
 e.g. <code>20111213-1-kiy-ap-framedwordlist-1</code>,
 <code>20111213-1-kiy-ap-framedwordlist-2</code>, etc.</p>
 <div class="footnote">
-<hr />
+<hr>
 <ol>
-<li id="fn:1">
+<li id="fn-1">
 <p>It's also a bad idea to include spaces in filenames, as we
-discuss in the section <a href="#files">Organizing files</a>.&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+discuss in the section <a href="#files">Organizing files</a>.&#160;<a class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn:2">
+<li id="fn-2">
 <p>We created these HTML tables using the web-based
 <a href="http://truben.no/latex/table/">table editor</a>, which is handy
 for converting tables between various text formats (CSV,
 tab-delimited, space-delimited) and LaTeX and html formats and other
-formats used in web development.&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+formats used in web development.&#160;<a class="footnote-backref" href="#fnref-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
-<li id="fn:3">
-<p>Flip also has a GUI implementation called <a href="https://code.google.com/p/linebreak/">LineBreak</a>.&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<li id="fn-3">
+<p>Flip also has a GUI implementation called <a href="https://code.google.com/p/linebreak/">LineBreak</a>.&#160;<a class="footnote-backref" href="#fnref-3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
-<li id="fn:4">
+<li id="fn-4">
 <p><code>g++</code> is available from <a href="https://developer.apple.com/xcode/">Xcode</a> command line tools, which
 you can install from the Mac App Store by downloading Xcode and
-<code>Command Line Tools</code> for installation in the <a href="http://stackoverflow.com/questions/9329243/xcode-4-4-command-line-tools">Download preference pane</a>.&#160;<a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<code>Command Line Tools</code> for installation in the <a href="http://stackoverflow.com/questions/9329243/xcode-4-4-command-line-tools">Download preference pane</a>.&#160;<a class="footnote-backref" href="#fnref-4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
-<li id="fn:5">
+<li id="fn-5">
 <p>The directory structure graphics are done via the command line
-utility <a href="http://mama.indstate.edu/users/ice/tree/"><code>tree</code></a>.&#160;<a class="footnote-backref" href="#fnref:5" rev="footnote" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+utility <a href="http://mama.indstate.edu/users/ice/tree/"><code>tree</code></a>.&#160;<a class="footnote-backref" href="#fnref-5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    var location_protocol = (false) ? 'https' : document.location.protocol;
-    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -1094,7 +1037,7 @@ utility <a href="http://mama.indstate.edu/users/ice/tree/"><code>tree</code></a>
       <hr>
       <div class="row">
          <div class="col-xs-10">&copy; 2016 Kristine M. Yu
-            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>

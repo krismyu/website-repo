@@ -13,13 +13,13 @@
 
         <meta name="author" content="Kristine Yu" />
         <meta name="keywords" content="ldc-kiy,fieldwork,coding,shell,sox,audio" />
-        <meta name="description" content="This tutorial introduces how to process audio files from fieldwork recordings with SoX, a command-line utility for working with soundfiles.1 See the tutorial Processing audio (with Praat) for the sister tutorial using Praat. Following an introductory section, the tutorial shows how to use SoX command utilities to view information ..." />
+        <meta name="description" content="This tutorial introduces how to process audio files from fieldwork recordings with SoX, a command-line utility for working with soundfiles.1 See the tutorial Processing audio (with Praat) for the sister tutorial using Praat. Following an introductory section, the tutorial shows how to use SoX command utilities to view information …" />
 
         <meta property="og:site_name" content="Kristine M. Yu" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Processing audio files (with SoX)"/>
         <meta property="og:url" content="../blog/processing-audio-files-sox.html"/>
-        <meta property="og:description" content="This tutorial introduces how to process audio files from fieldwork recordings with SoX, a command-line utility for working with soundfiles.1 See the tutorial Processing audio (with Praat) for the sister tutorial using Praat. Following an introductory section, the tutorial shows how to use SoX command utilities to view information ..."/>
+        <meta property="og:description" content="This tutorial introduces how to process audio files from fieldwork recordings with SoX, a command-line utility for working with soundfiles.1 See the tutorial Processing audio (with Praat) for the sister tutorial using Praat. Following an introductory section, the tutorial shows how to use SoX command utilities to view information …"/>
         <meta property="article:published_time" content="2013-06-23" />
             <meta property="article:section" content="articles" />
             <meta property="article:tag" content="ldc-kiy" />
@@ -118,7 +118,7 @@ Kristine M. Yu            </a>
                 </div>
                 <p>This tutorial introduces how to process audio files from fieldwork
 recordings with <a href="http://sox.sourceforge.net/">SoX</a>, a command-line
-utility for working with soundfiles.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup> See the tutorial
+utility for working with soundfiles.<sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup> See the tutorial
 <a href="processing-audio-files-praat.html">Processing audio (with Praat)</a> for
 the sister tutorial using Praat.</p>
 <!-- PELICAN_END_SUMMARY -->
@@ -134,7 +134,7 @@ batch process audio files:</p>
 <li><a href="#channel">Extracting a single channel from the file</a></li>
 <li><a href="#batch">Batch processing</a></li>
 </ul>
-<h2 id="introduction"><a id="intro"></a> Introduction</h2>
+<h2 id="wzxhzdk25wzxhzdk26-introduction"><a id="intro"></a> Introduction</h2>
 <p>What is SoX? The <a href="http://sox.sourceforge.net/">homepage for SoX</a> calls it "the Swiss Army knife of
 sound processing programs" and gives the following description:</p>
 <blockquote>
@@ -186,11 +186,11 @@ demo/      your-turn/
 
 
 <p>The <code>demo/</code> directory contains all the files used and generated during the tutorial for your reference. The <code>your-turn/</code> directory is for you to play in and contains only the raw audio files the tutorial works with, and not any of the generated files from the tutorial. The rest of the tutorial will assume that the user starts in the directory <code>ldc-kiy/tutorials/processing-audio-files/your-turn/</code>.</p>
-<hr />
-<h2 id="displaying-audio-file-information"><a id="display"></a>Displaying audio file information</h2>
+<hr>
+<h2 id="wzxhzdk29wzxhzdk30displaying-audio-file-information"><a id="display"></a>Displaying audio file information</h2>
 <p>In the <code>your-turn/</code> directory, navigate to <code>20111213/raw/</code> and see
 what's in there:</p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> 20111213/raw/ <span class="c1"># navigate from the your-turn directory</span>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="m">20111213</span>/raw/ <span class="c1"># navigate from the your-turn directory</span>
 ls <span class="c1"># display directory contents</span>
 </pre></div>
 
@@ -202,19 +202,19 @@ ls <span class="c1"># display directory contents</span>
 
 
 <p>We can use sox to display information about the wav file as follows:</p>
-<div class="highlight"><pre><span></span>sox --i 20111213-1-kiy-ap-framedwordlist.wav <span class="c1"># display audio file header info</span>
+<div class="highlight"><pre><span></span>sox --i <span class="m">20111213</span>-1-kiy-ap-framedwordlist.wav <span class="c1"># display audio file header info</span>
 </pre></div>
 
 
 <p>The output from the <code>sox --i</code> command is given below. </p>
 <div class="highlight"><pre><span></span>Input File     : <span class="s1">&#39;20111213-1-kiy-ap-framedwordlist.wav&#39;</span>
-Channels       : 2
-Sample Rate    : 48000
-Precision      : 16-bit
-Duration       : 00:05:47.83 <span class="o">=</span> <span class="m">16695936</span> samples ~ 26087.4 CDDA sectors
-File Size      : 66.8M
-Bit Rate       : 1.54M
-Sample Encoding: 16-bit Signed Integer PCM
+Channels       : <span class="m">2</span>
+Sample Rate    : <span class="m">48000</span>
+Precision      : <span class="m">16</span>-bit
+Duration       : <span class="m">00</span>:05:47.83 <span class="o">=</span> <span class="m">16695936</span> samples ~ <span class="m">26087</span>.4 CDDA sectors
+File Size      : <span class="m">66</span>.8M
+Bit Rate       : <span class="m">1</span>.54M
+Sample Encoding: <span class="m">16</span>-bit Signed Integer PCM
 </pre></div>
 
 
@@ -230,8 +230,8 @@ speech so we can <a href="#downsample">downsample</a> the file to keep the file
 size down. We also want to
 extract just one of the 2 channels, the channel reserved for the
 consultant (Channel 1), for further data analysis.</p>
-<hr />
-<h2 id="downsampling"><a id="downsample"></a>Downsampling</h2>
+<hr>
+<h2 id="wzxhzdk31wzxhzdk32downsampling"><a id="downsample"></a>Downsampling</h2>
 <p>Below, we downsample the sampling rate of the file
  <code>20111213-1-kiy-ap-framedwordlist.wav</code> from 48kHz to 16kHz and write
  the downsampled file to a new file
@@ -247,36 +247,36 @@ mkdir ../data
 
 <span class="c1"># downsample to 16kHz and write to file in data/</span>
 <span class="c1"># &#39;-r 16k&#39; specifies resampling at a 16kHz sampling rate</span>
-sox 20111213-1-kiy-ap-framedwordlist.wav -r 16k ../data/20111213-1-kiy-ap-framedwordlist-stereo.wav
+sox <span class="m">20111213</span>-1-kiy-ap-framedwordlist.wav -r 16k ../data/20111213-1-kiy-ap-framedwordlist-stereo.wav
 </pre></div>
 
 
 <p>We can change the working directory to the directory with the new downsampled file and display the audio file information:</p>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> ../data/ <span class="c1"># change working directory to directory with downsampled file</span>
-sox --i 20111213-1-kiy-ap-framedwordlist-stereo.wav
+sox --i <span class="m">20111213</span>-1-kiy-ap-framedwordlist-stereo.wav
 </pre></div>
 
 
 <p>Note in the displayed info below that the the sample rate of this new file is 16000 Hz (16kHz), as desired. Moreover, the file size has dropped from 66.8 MB to 22.3MB.</p>
 <div class="highlight"><pre><span></span>Input File     : <span class="s1">&#39;20111213-1-kiy-ap-framedwordlist-stereo.wav&#39;</span>
-Channels       : 2
-Sample Rate    : 16000
-Precision      : 16-bit
-Duration       : 00:05:47.83 <span class="o">=</span> <span class="m">5565312</span> samples ~ 26087.4 CDDA sectors
-File Size      : 22.3M
+Channels       : <span class="m">2</span>
+Sample Rate    : <span class="m">16000</span>
+Precision      : <span class="m">16</span>-bit
+Duration       : <span class="m">00</span>:05:47.83 <span class="o">=</span> <span class="m">5565312</span> samples ~ <span class="m">26087</span>.4 CDDA sectors
+File Size      : <span class="m">22</span>.3M
 Bit Rate       : 512k
-Sample Encoding: 16-bit Signed Integer PCM
+Sample Encoding: <span class="m">16</span>-bit Signed Integer PCM
 </pre></div>
 
 
-<hr />
-<h2 id="reducing-bit-depth"><a id="bit"></a>Reducing bit depth</h2>
+<hr>
+<h2 id="wzxhzdk33wzxhzdk34reducing-bit-depth"><a id="bit"></a>Reducing bit depth</h2>
 <p>We can tweak the downsampling command slightly to get the command
 needed to reduce the <a href="http://wiki.audacityteam.org/wiki/Bit_Depth">bit depth</a> of an audio file:</p>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> ../raw/ <span class="c1"># change back to the raw/ directory</span>
 
 <span class="c1"># &#39;-b 16&#39; specifies reducing bit depth to 16 bit</span>
-sox 20111213-1-kiy-ap-framedwordlist.wav -b <span class="m">16</span> ../data/20111213-1-kiy-ap-framedwordlist-stereo.wav 
+sox <span class="m">20111213</span>-1-kiy-ap-framedwordlist.wav -b <span class="m">16</span> ../data/20111213-1-kiy-ap-framedwordlist-stereo.wav 
 </pre></div>
 
 
@@ -286,12 +286,12 @@ as before. </p>
 <p>It is also possible to combine the commands for downsampling and
 changing precision, as follows (starting in the <code>raw/</code> directory):</p>
 <div class="highlight"><pre><span></span><span class="c1"># &#39;-b 16&#39; specifies converting to a bit depth of 16 and &#39;r 16k&#39; indicates converting to a sampling rate of 16kHz.</span>
-sox 20111213-1-kiy-ap-framedwordlist.wav -b <span class="m">16</span> -r 16k ../data/20111213-1-kiy-ap-framedwordlist-stereo.wav
+sox <span class="m">20111213</span>-1-kiy-ap-framedwordlist.wav -b <span class="m">16</span> -r 16k ../data/20111213-1-kiy-ap-framedwordlist-stereo.wav
 </pre></div>
 
 
-<hr />
-<h2 id="extracting-a-channel"><a id="channel"></a>Extracting a channel</h2>
+<hr>
+<h2 id="wzxhzdk35wzxhzdk36extracting-a-channel"><a id="channel"></a>Extracting a channel</h2>
 <p>We recorded the elicitation session with two channels,</p>
 <ul>
 <li>Channel 1 (left channel): consultant</li>
@@ -299,7 +299,7 @@ sox 20111213-1-kiy-ap-framedwordlist.wav -b <span class="m">16</span> -r 16k ../
 </ul>
 <p>To extract a channel from the stereo audio file, we use the <code>remix</code>
 effect: for an input file with 2 channels, <code>remix 1 0</code> selects Channel
-1, while <code>remix 0 1</code> selects Channel 2.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup> Here, we select Channel 1
+1, while <code>remix 0 1</code> selects Channel 2.<sup id="fnref-2"><a class="footnote-ref" href="#fn-2">2</a></sup> Here, we select Channel 1
 using <code>remix 1 0</code> to extract the consultant's channel from the
 downsampled stereo file <code>20111213-1-kiy-ap-framedwordlist-stereo.wav</code>
 in <code>data/</code> and write to a new file in <code>data/</code> we call
@@ -307,14 +307,14 @@ in <code>data/</code> and write to a new file in <code>data/</code> we call
 directory where we left off:</p>
 <div class="highlight"><pre><span></span><span class="c1"># change directory to data/ sub-directory from raw/ sub-directory</span>
 <span class="nb">cd</span> ../data/
-sox 20111213-1-kiy-ap-framedwordlist-stereo.wav 20111213-1-kiy-ap-framedwordlist.wav remix 1
+sox <span class="m">20111213</span>-1-kiy-ap-framedwordlist-stereo.wav <span class="m">20111213</span>-1-kiy-ap-framedwordlist.wav remix <span class="m">1</span>
 </pre></div>
 
 
 <p>Alternatively, this command is less terse and does the same thing:</p>
 <div class="highlight"><pre><span></span><span class="c1"># &#39;-c 1&#39; specifies the output file to have 1 channel</span>
 <span class="c1"># &#39;remix&#39; selects and mixes input audio channels into output audio channels</span>
-sox 20111213-1-kiy-ap-framedwordlist-stereo.wav -c <span class="m">1</span> 20111213-1-kiy-ap-framedwordlist.wav remix <span class="m">1</span> 0
+sox <span class="m">20111213</span>-1-kiy-ap-framedwordlist-stereo.wav -c <span class="m">1</span> <span class="m">20111213</span>-1-kiy-ap-framedwordlist.wav remix <span class="m">1</span> <span class="m">0</span>
 </pre></div>
 
 
@@ -322,12 +322,12 @@ sox 20111213-1-kiy-ap-framedwordlist-stereo.wav -c <span class="m">1</span> 2011
 command as follows, sidestepping the creation of the downsampled
 stereo file in <code>data/</code>:</p>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> ../raw
-sox 20111213-1-kiy-ap-framedwordlist.wav -b <span class="m">16</span> -r 16k ../data/20111213-1-kiy-ap-framedwordlist-stereo.wav remix 1
+sox <span class="m">20111213</span>-1-kiy-ap-framedwordlist.wav -b <span class="m">16</span> -r 16k ../data/20111213-1-kiy-ap-framedwordlist-stereo.wav remix <span class="m">1</span>
 </pre></div>
 
 
-<hr />
-<h2 id="batch-processing"><a id="batch"></a>Batch processing</h2>
+<hr>
+<h2 id="wzxhzdk37wzxhzdk38batch-processing"><a id="batch"></a>Batch processing</h2>
 <p>The real power of SoX comes when you're trying to perform the same
 operation on a bunch of audio files at once. We present an example of
 batch processing audio files with SoX below to give you a flavor.</p>
@@ -341,26 +341,26 @@ ls <span class="c1"># list directory contents</span>
 
 <p>You'll see there are 11 wav files in the directory:</p>
 <div class="highlight"><pre><span></span>amoebe@moebius :: ls
-20111213-1-kiy-ap-framedwordlist-1.wav   20111213-1-kiy-ap-framedwordlist-15.wav
-20111213-1-kiy-ap-framedwordlist-10.wav  20111213-1-kiy-ap-framedwordlist-16.wav
-20111213-1-kiy-ap-framedwordlist-11.wav  20111213-1-kiy-ap-framedwordlist-17.wav
-20111213-1-kiy-ap-framedwordlist-12.wav  20111213-1-kiy-ap-framedwordlist-18.wav
-20111213-1-kiy-ap-framedwordlist-13.wav  20111213-1-kiy-ap-framedwordlist-19.wav
-20111213-1-kiy-ap-framedwordlist-14.wav
+<span class="m">20111213</span>-1-kiy-ap-framedwordlist-1.wav   <span class="m">20111213</span>-1-kiy-ap-framedwordlist-15.wav
+<span class="m">20111213</span>-1-kiy-ap-framedwordlist-10.wav  <span class="m">20111213</span>-1-kiy-ap-framedwordlist-16.wav
+<span class="m">20111213</span>-1-kiy-ap-framedwordlist-11.wav  <span class="m">20111213</span>-1-kiy-ap-framedwordlist-17.wav
+<span class="m">20111213</span>-1-kiy-ap-framedwordlist-12.wav  <span class="m">20111213</span>-1-kiy-ap-framedwordlist-18.wav
+<span class="m">20111213</span>-1-kiy-ap-framedwordlist-13.wav  <span class="m">20111213</span>-1-kiy-ap-framedwordlist-19.wav
+<span class="m">20111213</span>-1-kiy-ap-framedwordlist-14.wav
 </pre></div>
 
 
 <p>Suppose we'd like to find out the duration of each of these 11 wav
 files. We can do this with an additional option for <code>sox --i</code>, say,
 for the file <code>20111213-1-kiy-ap-framedwordlist-1.wav</code>:</p>
-<div class="highlight"><pre><span></span>sox --i -D 20111213-1-kiy-ap-framedwordlist-1.wav
+<div class="highlight"><pre><span></span>sox --i -D <span class="m">20111213</span>-1-kiy-ap-framedwordlist-1.wav
 </pre></div>
 
 
 <p>and we find out that <code>20111213-1-kiy-ap-framedwordlist-1.wav</code> has a
 duration of 0.804 seconds:</p>
-<div class="highlight"><pre><span></span>amoebe@moebius :: sox --i -D 20111213-1-kiy-ap-framedwordlist-1.wav
-0.804000
+<div class="highlight"><pre><span></span>amoebe@moebius :: sox --i -D <span class="m">20111213</span>-1-kiy-ap-framedwordlist-1.wav
+<span class="m">0</span>.804000
 </pre></div>
 
 
@@ -372,7 +372,7 @@ which allows use of the wildcard <code>*</code> to perform filename expansion:</
 <span class="c1"># (with some hedges for `any&#39;, see</span>
 <span class="c1"># http://www.tldp.org/LDP/abs/html/globbingref.html for details)</span>
 
-sox --i -D 20111213-1-kiy-ap-framedwordlist-*.wav
+sox --i -D <span class="m">20111213</span>-1-kiy-ap-framedwordlist-*.wav
 
 <span class="c1"># This is equivalent to a sequence of sox --i -D commands, one for</span>
 <span class="c1"># each of the 11 files with filenames matching 20111213-1-kiy-ap-framedwordlist-*.wav</span>
@@ -380,18 +380,18 @@ sox --i -D 20111213-1-kiy-ap-framedwordlist-*.wav
 
 
 <p>which gives us the output:</p>
-<div class="highlight"><pre><span></span>amoebe@moebius :: sox --i -D 20111213-1-kiy-ap-framedwordlist-*.wav
-0.804000
-0.863500
-0.832625
-0.827750
-0.793188
-0.869062
-0.903687
-0.996812
-0.922500
-0.796438
-0.933625
+<div class="highlight"><pre><span></span>amoebe@moebius :: sox --i -D <span class="m">20111213</span>-1-kiy-ap-framedwordlist-*.wav
+<span class="m">0</span>.804000
+<span class="m">0</span>.863500
+<span class="m">0</span>.832625
+<span class="m">0</span>.827750
+<span class="m">0</span>.793188
+<span class="m">0</span>.869062
+<span class="m">0</span>.903687
+<span class="m">0</span>.996812
+<span class="m">0</span>.922500
+<span class="m">0</span>.796438
+<span class="m">0</span>.933625
 </pre></div>
 
 
@@ -401,38 +401,38 @@ checking how long each one is.</p>
 these durations to a log file called <code>durations.txt</code>. We can easily
 create such a file, with the first column indicating which filenumber 1-11
 the duration corresponds to.</p>
-<div class="highlight"><pre><span></span>paste -d<span class="s1">&#39;\t&#39;</span> &lt;<span class="o">(</span>jot <span class="m">11</span> 1<span class="o">)</span> &lt;<span class="o">(</span>sox --i -D 20111213-1-kiy-ap-framedwordlist-*.wav<span class="o">)</span> &gt; durations.txt
+<div class="highlight"><pre><span></span>paste -d<span class="s1">&#39;\t&#39;</span> &lt;<span class="o">(</span>jot <span class="m">11</span> <span class="m">1</span><span class="o">)</span> &lt;<span class="o">(</span>sox --i -D <span class="m">20111213</span>-1-kiy-ap-framedwordlist-*.wav<span class="o">)</span> &gt; durations.txt
 </pre></div>
 
 
 <p>We can use the <code>more</code> command to view the content of the text file <code>durations.txt</code>:</p>
 <div class="highlight"><pre><span></span>amoebe@moebius :: more durations.txt
-<span class="m">1</span>       0.804000
-<span class="m">2</span>       0.863500
-<span class="m">3</span>       0.832625
-<span class="m">4</span>       0.827750
-<span class="m">5</span>       0.793188
-<span class="m">6</span>       0.869062
-<span class="m">7</span>       0.903687
-<span class="m">8</span>       0.996812
-<span class="m">9</span>       0.922500
-<span class="m">10</span>      0.796438
-<span class="m">11</span>      0.933625
+<span class="m">1</span>       <span class="m">0</span>.804000
+<span class="m">2</span>       <span class="m">0</span>.863500
+<span class="m">3</span>       <span class="m">0</span>.832625
+<span class="m">4</span>       <span class="m">0</span>.827750
+<span class="m">5</span>       <span class="m">0</span>.793188
+<span class="m">6</span>       <span class="m">0</span>.869062
+<span class="m">7</span>       <span class="m">0</span>.903687
+<span class="m">8</span>       <span class="m">0</span>.996812
+<span class="m">9</span>       <span class="m">0</span>.922500
+<span class="m">10</span>      <span class="m">0</span>.796438
+<span class="m">11</span>      <span class="m">0</span>.933625
 </pre></div>
 
 
 <div class="footnote">
-<hr />
+<hr>
 <ol>
-<li id="fn:1">
+<li id="fn-1">
 <p>SoX is used in the backend of
 <a href="https://github.com/langtech/toney">Toney</a>, the tone classification
-software developed by Haejoong Lee and Steven Bird as part of the NSF project <a href="http://www.prosodicsystems.org/">Prosodic Systems in New Guinea</a>.&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+software developed by Haejoong Lee and Steven Bird as part of the NSF project <a href="http://www.prosodicsystems.org/">Prosodic Systems in New Guinea</a>.&#160;<a class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn:2">
+<li id="fn-2">
 <p>SoX used to have an <code>avg</code> effect you could use for this, which
 is still listed in various SoX tutorials. The
-<code>avg</code> effect is now deprecated. Use <code>remix</code> instead.&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<code>avg</code> effect is now deprecated. Use <code>remix</code> instead.&#160;<a class="footnote-backref" href="#fnref-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -501,7 +501,7 @@ is still listed in various SoX tutorials. The
       <hr>
       <div class="row">
          <div class="col-xs-10">&copy; 2016 Kristine M. Yu
-            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>

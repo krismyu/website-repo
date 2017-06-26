@@ -207,10 +207,10 @@ which has this example modification to <code>pelicanconf.py</code>:</li>
  the DNS entries propagated, for <code>www.krisyu.org</code>.</p>
 <div class="highlight"><pre><span></span>~/web/website<span class="o">(</span>master<span class="o">)</span> $ dig www.krisyu.org +nostats +nocomments +nocmd
 
-<span class="p">;</span> &lt;&lt;&gt;&gt; DiG 9.8.3-P1 &lt;&lt;&gt;&gt; www.krisyu.org +nostats +nocomments +nocmd
+<span class="p">;</span> &lt;&lt;&gt;&gt; DiG <span class="m">9</span>.8.3-P1 &lt;&lt;&gt;&gt; www.krisyu.org +nostats +nocomments +nocmd
 <span class="p">;;</span> global options: +cmd
 <span class="p">;</span>www.krisyu.org.            IN  A
-www.krisyu.org.     <span class="m">10463</span>   IN  A   208.113.172.21
+www.krisyu.org.     <span class="m">10463</span>   IN  A   <span class="m">208</span>.113.172.21
 ~/web/website<span class="o">(</span>master<span class="o">)</span> $ dig www.krisyu.org +nostats +nocomments +nocmd
 </pre></div>
 
@@ -221,11 +221,11 @@ www.krisyu.org.     <span class="m">10463</span>   IN  A   208.113.172.21
 I made to the DNS entries has propagated, for <code>krisyu.org</code></p>
 <div class="highlight"><pre><span></span>~/web/website<span class="o">(</span>master *<span class="o">)</span> $ dig krisyu.org +nostats +nocomments +nocmd
 
-<span class="p">;</span> &lt;&lt;&gt;&gt; DiG 9.8.3-P1 &lt;&lt;&gt;&gt; krisyu.org +nostats +nocomments +nocmd
+<span class="p">;</span> &lt;&lt;&gt;&gt; DiG <span class="m">9</span>.8.3-P1 &lt;&lt;&gt;&gt; krisyu.org +nostats +nocomments +nocmd
 <span class="p">;;</span> global options: +cmd
 <span class="p">;</span>krisyu.org.            IN  A
-krisyu.org.     <span class="m">14400</span>   IN  A   192.30.252.154
-krisyu.org.     <span class="m">14400</span>   IN  A   192.30.252.153
+krisyu.org.     <span class="m">14400</span>   IN  A   <span class="m">192</span>.30.252.154
+krisyu.org.     <span class="m">14400</span>   IN  A   <span class="m">192</span>.30.252.153
 </pre></div>
 
 
@@ -235,12 +235,12 @@ krisyu.org.     <span class="m">14400</span>   IN  A   192.30.252.153
 I made to the DNS entries have propagated, for <code>www.krisyu.org</code></p>
 <div class="highlight"><pre><span></span>~/web/website<span class="o">(</span>master *<span class="o">)</span> $ dig www.krisyu.org +nostats +nocomments +nocmd
 
-<span class="p">;</span> &lt;&lt;&gt;&gt; DiG 9.8.3-P1 &lt;&lt;&gt;&gt; www.krisyu.org +nostats +nocomments +nocmd
+<span class="p">;</span> &lt;&lt;&gt;&gt; DiG <span class="m">9</span>.8.3-P1 &lt;&lt;&gt;&gt; www.krisyu.org +nostats +nocomments +nocmd
 <span class="p">;;</span> global options: +cmd
 <span class="p">;</span>www.krisyu.org.            IN  A
 www.krisyu.org.     <span class="m">14400</span>   IN  CNAME   krismyu.github.io.
 krismyu.github.io.  <span class="m">3600</span>    IN  CNAME   github.map.fastly.net.
-github.map.fastly.net.  <span class="m">2</span>   IN  A   23.235.39.133
+github.map.fastly.net.  <span class="m">2</span>   IN  A   <span class="m">23</span>.235.39.133
 </pre></div>
 
 
@@ -318,7 +318,7 @@ github.map.fastly.net.  <span class="m">2</span>   IN  A   23.235.39.133
       <hr>
       <div class="row">
          <div class="col-xs-10">&copy; 2016 Kristine M. Yu
-            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
