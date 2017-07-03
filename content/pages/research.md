@@ -1,6 +1,6 @@
 Title: Research
 Slug: research
-<!-- Time-stamp: <2017-06-25 23:36:02 amoebe> -->
+<!-- Time-stamp: <2017-07-01 23:37:20 amoebe> -->
 
 
 (See [CV](https://rawgithub.com/krismyu/kmyu-cv/master/kmyu-cv.pdf)
@@ -8,9 +8,11 @@ for complete list and linked publications)
 
 Selected talk slides are available at [Speaker Deck](https://speakerdeck.com/krisyu). 
 
+[Google Scholar profile](https://scholar.google.com/citations?hl=en&user=1FUldd0AAAAJ)
+
 ## Tonal and intonational categories 
 
-1. Kristine M. Yu (accepted). The role of time in phonetic spaces: temporal resolution in Cantonese tone perception. J. Phonetics. [[pdf](https://github.com/krismyu/resolution/blob/master/yu2017-res.pdf)]
+1. Kristine M. Yu (accepted). The role of time in phonetic spaces: temporal resolution in Cantonese tone perception. J. Phonetics. [[pdf](/pages/pdfs/yu2017-res.pdf)]
 
 1. Kristine M. Yu, Sameer ud Dowla Khan, and Megha
    Sundara (under revision). Intonational phonology in Bengali and
@@ -39,7 +41,7 @@ Angeles. [[pdf](http://www.linguistics.ucla.edu/general/Dissertations/YuDisserta
 ## <a name="research-phon-constituency"></a>Phonological constituency
 
 1. Kristine M. Yu (to appear). Proceedings of Formal Grammar 2017. Advantages of constituency:
-   computational perspectives on Samoan word prosody. [[pdf](https://github.com/krismyu/smo-constituency-feet/blob/master/fg-kmyu.pdf), [code](https://github.com/krismyu/smo-constituency-feet)]
+   computational perspectives on Samoan word prosody. [[pdf](/pages/pdfs/fg-kmyu.pdf), [code](https://github.com/krismyu/smo-constituency-feet)]
 2. Kie Zuraw, Kristine M. Yu, and Robyn Orfitelli (2014). The word-level
    prosody of Samoan.[^2] Phonology 31.02, pp. 271-327. [[web](http://dx.doi.org/10.1017/S095267571400013X), [pdf](/pages/pdfs/zurawyuorfitelli2014.pdf)]
 
@@ -48,7 +50,7 @@ Angeles. [[pdf](http://www.linguistics.ucla.edu/general/Dissertations/YuDisserta
 
 1. Kristine M. Yu (under revision). Tonal marking of absolutive
    case in Samoan. 
-1. Kristine M. Yu and Edward Stabler (accepted). (In)variability in Samoan prosody and consequences for syntactic parsing. Laboratory Phonology.
+1. Kristine M. Yu and Edward Stabler (accepted). (In)variability in Samoan prosody and consequences for syntactic parsing. Laboratory Phonology. [[pdf](/pages/pdfs/yustabler2017.pdf)]
 2. Kristine M. Yu. (2011). The sound of ergativity:
       morphosyntax-prosody mapping in Samoan. In: Suzi Lima, Kevin
       Mullin, Brian Smith, eds., Proceedings of the 39th Annual

@@ -3,7 +3,7 @@ slug: home
 save_as: index.html
 URL:
 
-<!-- Time-stamp: <2017-06-25 23:30:05 amoebe>  -->
+<!-- Time-stamp: <2017-07-01 23:39:25 amoebe>  -->
 
 <div class="banner">
 	<div class="container">
@@ -15,21 +15,22 @@ URL:
 </div>
 
 <div class = "row">
-	<div class="col-sm-6"> <img src="/pages/home/kmyu-headshot-2012-65width.jpg" alt =
+	<div class="col-sm-6"> <img src="/pages/home/kmyu-shot.jpg" alt =
 		"Kristine M. Yu" width="100%" style="float:left; padding-left:15px;
 			padding-right:15px; padding-top:0; padding-bottom:15px" />   
 	</div>
 	<div class= "col-sm-6">		
-	<h3><strong>Tone and intonation, from the speech signal on up to grammar and human language processing.</strong></h3>
+	<h2><strong>Prosody, from the speech signal on up to grammar and human language processing.</strong></h2>
 <p>
-<h3><a href = "https://rawgithub.com/krismyu/kmyu-cv/master/kmyu-cv.pdf"><strong>Vita</strong>
-[pdf]</a></h3>
+<h2><a href = "https://rawgithub.com/krismyu/kmyu-cv/master/kmyu-cv.pdf"><strong>Vita</strong>
+[pdf]</a></h2>
 </p>
 
 <p>
-Assistant Professor, <a href = "http://www.umass.edu/linguist">Linguistics</a><br>
-<a href = "http://www.umass.edu">University of Massachusetts Amherst</a><br>
+<h3>Assistant Professor, <a href = "http://www.umass.edu/linguist">Linguistics</a><br>
+<a href = "http://www.umass.edu">University of Massachusetts Amherst</a></h3><br>
 </p>
+
 <p>
 Integrative Learning Center<br>
 650 North Pleasant Street<br>
@@ -46,9 +47,10 @@ ILC N422<br>
 	<h3><strong>Recent work:</strong></h3>
 		<h5>
 		<ul>
-			<li><a href = "http://fg.phil.hhu.de/2017/">Formal Grammar 2017</a> accepted paper: <a href = "https://github.com/krismyu/smo-constituency-feet/blob/master/fg-kmyu.pdf">Advantages of constituency:
+			<li><a href = "http://fg.phil.hhu.de/2017/">Formal Grammar 2017</a> accepted paper: <a href = "http://www.krisyu.org/pages/pdfs/fg-kmyu.pdf">Advantages of constituency:
 	computational perspectives on Samoan word prosody</a></li>
-			<li>Journal of Phonetics accepted paper: <a href = "https://github.com/krismyu/resolution/blob/master/yu2017-res.pdf">The role of time in phonetics spaces: temporal resolution in Cantonese tone perception</a></li>
+			<li>Journal of Phonetics accepted paper: <a href = "http://www.krisyu.org/pages/pdfs/yu2017-res.pdf">The role of time in phonetic spaces: temporal resolution in Cantonese tone perception</a></li>
+			<li>Laboratory Phonology accepted paper (with Ed Stabler): <a href = "http://www.krisyu.org/pages/pdfs/yustabler2017.pdf">(In)variability in the Samoan syntax/prosody interface and consequences for syntactic parsing</a></li>
 		</ul>
 	</h5>
 	</div>
