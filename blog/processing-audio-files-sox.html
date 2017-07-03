@@ -134,7 +134,7 @@ batch process audio files:</p>
 <li><a href="#channel">Extracting a single channel from the file</a></li>
 <li><a href="#batch">Batch processing</a></li>
 </ul>
-<h2 id="wzxhzdk25wzxhzdk26-introduction"><a id="intro"></a> Introduction</h2>
+<h2 id="introduction"><a id="intro"></a> Introduction</h2>
 <p>What is SoX? The <a href="http://sox.sourceforge.net/">homepage for SoX</a> calls it "the Swiss Army knife of
 sound processing programs" and gives the following description:</p>
 <blockquote>
@@ -187,7 +187,7 @@ demo/      your-turn/
 
 <p>The <code>demo/</code> directory contains all the files used and generated during the tutorial for your reference. The <code>your-turn/</code> directory is for you to play in and contains only the raw audio files the tutorial works with, and not any of the generated files from the tutorial. The rest of the tutorial will assume that the user starts in the directory <code>ldc-kiy/tutorials/processing-audio-files/your-turn/</code>.</p>
 <hr>
-<h2 id="wzxhzdk29wzxhzdk30displaying-audio-file-information"><a id="display"></a>Displaying audio file information</h2>
+<h2 id="displaying-audio-file-information"><a id="display"></a>Displaying audio file information</h2>
 <p>In the <code>your-turn/</code> directory, navigate to <code>20111213/raw/</code> and see
 what's in there:</p>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="m">20111213</span>/raw/ <span class="c1"># navigate from the your-turn directory</span>
@@ -231,7 +231,7 @@ size down. We also want to
 extract just one of the 2 channels, the channel reserved for the
 consultant (Channel 1), for further data analysis.</p>
 <hr>
-<h2 id="wzxhzdk31wzxhzdk32downsampling"><a id="downsample"></a>Downsampling</h2>
+<h2 id="downsampling"><a id="downsample"></a>Downsampling</h2>
 <p>Below, we downsample the sampling rate of the file
  <code>20111213-1-kiy-ap-framedwordlist.wav</code> from 48kHz to 16kHz and write
  the downsampled file to a new file
@@ -270,7 +270,7 @@ Sample Encoding: <span class="m">16</span>-bit Signed Integer PCM
 
 
 <hr>
-<h2 id="wzxhzdk33wzxhzdk34reducing-bit-depth"><a id="bit"></a>Reducing bit depth</h2>
+<h2 id="reducing-bit-depth"><a id="bit"></a>Reducing bit depth</h2>
 <p>We can tweak the downsampling command slightly to get the command
 needed to reduce the <a href="http://wiki.audacityteam.org/wiki/Bit_Depth">bit depth</a> of an audio file:</p>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> ../raw/ <span class="c1"># change back to the raw/ directory</span>
@@ -291,7 +291,7 @@ sox <span class="m">20111213</span>-1-kiy-ap-framedwordlist.wav -b <span class="
 
 
 <hr>
-<h2 id="wzxhzdk35wzxhzdk36extracting-a-channel"><a id="channel"></a>Extracting a channel</h2>
+<h2 id="extracting-a-channel"><a id="channel"></a>Extracting a channel</h2>
 <p>We recorded the elicitation session with two channels,</p>
 <ul>
 <li>Channel 1 (left channel): consultant</li>
@@ -327,7 +327,7 @@ sox <span class="m">20111213</span>-1-kiy-ap-framedwordlist.wav -b <span class="
 
 
 <hr>
-<h2 id="wzxhzdk37wzxhzdk38batch-processing"><a id="batch"></a>Batch processing</h2>
+<h2 id="batch-processing"><a id="batch"></a>Batch processing</h2>
 <p>The real power of SoX comes when you're trying to perform the same
 operation on a bunch of audio files at once. We present an example of
 batch processing audio files with SoX below to give you a flavor.</p>
@@ -500,7 +500,7 @@ is still listed in various SoX tutorials. The
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2016 Kristine M. Yu
+         <div class="col-xs-10">&copy; 2017 Kristine M. Yu
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
