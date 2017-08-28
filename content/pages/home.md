@@ -3,7 +3,7 @@ slug: home
 save_as: index.html
 URL:
 
-<!-- Time-stamp: <2017-08-28 10:34:54 amoebe>  -->
+<!-- Time-stamp: <2017-08-28 19:17:02 amoebe>  -->
 
 <div class="banner">
 	<div class="container">
@@ -49,7 +49,7 @@ ILC N422<br>
 		<ul>
 			<li><a href = "http://fg.phil.hhu.de/2017/">Formal Grammar 2017</a> accepted paper: <a href = "http://www.krisyu.org/pages/pdfs/fg-kmyu.pdf">Advantages of constituency:
 	computational perspectives on Samoan word prosody</a></li>
-			<li>Journal of Phonetics accepted paper: <a href = "http://www.krisyu.org/pages/pdfs/yu2017_res.pdf">The role of time in phonetic spaces: temporal resolution in Cantonese tone perception</a></li>
+			<li>Journal of Phonetics paper (2017): <a href = "http://www.krisyu.org/pages/pdfs/yu2017_res.pdf">The role of time in phonetic spaces: temporal resolution in Cantonese tone perception</a></li>
 			<li>Laboratory Phonology accepted paper (with Ed Stabler): <a href = "http://www.krisyu.org/pages/pdfs/yustabler2017.pdf">(In)variability in the Samoan syntax/prosody interface and consequences for syntactic parsing</a></li>
 		</ul>
 	</h5>
