@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Processing audio files (with Praat) - Kristine M. Yu</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="http://kmyu.github.io/blog/processing-audio-files-praat.html">
+
+        <meta name="author" content="Kristine Yu" />
+        <meta name="keywords" content="ldc-kiy,fieldwork,coding,shell,praat,audio,tutorial" />
+        <meta name="description" content="This tutorial introduces how to process audio files from fieldwork recordings with Praat. See the tutorial Processing audio (with SoX) for the sister tutorial using SoX command line utilities. Following an introductory section, the tutorial shows how to use Praat information about a soundfile and make two different modifications to …" />
+
+        <meta property="og:site_name" content="Kristine M. Yu" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Processing audio files (with Praat)"/>
+        <meta property="og:url" content="http://kmyu.github.io/blog/processing-audio-files-praat.html"/>
+        <meta property="og:description" content="This tutorial introduces how to process audio files from fieldwork recordings with Praat. See the tutorial Processing audio (with SoX) for the sister tutorial using SoX command line utilities. Following an introductory section, the tutorial shows how to use Praat information about a soundfile and make two different modifications to …"/>
+        <meta property="article:published_time" content="2013-06-24" />
+            <meta property="article:section" content="articles" />
+            <meta property="article:tag" content="ldc-kiy" />
+            <meta property="article:tag" content="fieldwork" />
+            <meta property="article:tag" content="coding" />
+            <meta property="article:tag" content="shell" />
+            <meta property="article:tag" content="praat" />
+            <meta property="article:tag" content="audio" />
+            <meta property="article:tag" content="tutorial" />
+            <meta property="article:author" content="Kristine Yu" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://kmyu.github.io/theme/css/bootstrap.cosmo.min.css" type="text/css"/>
+    <link href="http://kmyu.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://kmyu.github.io/theme/css/pygments/monokai.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://kmyu.github.io/theme/css/style.css" type="text/css"/>
+        <link href="http://kmyu.github.io/static/custom.css" rel="stylesheet">
+
+        <link href="http://kmyu.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Kristine M. Yu ATOM Feed"/>
+
+
+
+        <link href="http://kmyu.github.io/feeds/articles.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Kristine M. Yu articles ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://kmyu.github.io/" class="navbar-brand">
+Kristine M. Yu            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="/research">Research</a></li>
+                    <li><a href="/teaching">Teaching</a></li>
+                    <li><a href="/code">Code</a></li>
+                    <li><a href="/blog">Blog</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://kmyu.github.io/blog/archives/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://kmyu.github.io/blog/processing-audio-files-praat.html"
+                       rel="bookmark"
+                       title="Permalink to Processing audio files (with Praat)">
+                        Processing audio files (with Praat)
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-06-24T17:10:00-04:00"> 2013 June 24</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://kmyu.github.io/blog/tag/ldc-kiy.html">ldc-kiy</a>
+        /
+	<a href="http://kmyu.github.io/blog/tag/fieldwork.html">fieldwork</a>
+        /
+	<a href="http://kmyu.github.io/blog/tag/coding.html">coding</a>
+        /
+	<a href="http://kmyu.github.io/blog/tag/shell.html">shell</a>
+        /
+	<a href="http://kmyu.github.io/blog/tag/praat.html">praat</a>
+        /
+	<a href="http://kmyu.github.io/blog/tag/audio.html">audio</a>
+        /
+	<a href="http://kmyu.github.io/blog/tag/tutorial.html">tutorial</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>This tutorial introduces how to process audio files from fieldwork
+recordings with <a href="http://www.praat.org">Praat</a>. See the tutorial
+<a href="processing-audio-files-sox.html">Processing audio (with SoX)</a> for
+the sister tutorial using <a href="http://sox.sourceforge.net">SoX</a> command line utilities.</p>
+<!-- PELICAN_END_SUMMARY -->
+
+<p>Following an <a href = "#intro">introductory section</a>, the tutorial shows how to use <a href =
+"http://www.praat.org/">Praat</a> 
+information about a soundfile and make two different modifications to
+the soundfile:<sup id="fnref-1"><a class="footnote-ref" href="#fn-1">1</a></sup></p>
+<ul>
+<li><a href="#display">Displaying information about the audio file</a></li>
+<li><a href="#channel">Extracting a single channel from the file</a></li>
+<li><a href="#downsample">Downsampling the audio file</a></li>
+</ul>
+<h2 id="wzxhzdk8wzxhzdk9-introduction"><a id="intro"></a> Introduction</h2>
+<p>Praat is powerful cross-platform, free and
+<a href="http://www.fon.hum.uva.nl/praat/download_sources.html">open source</a> software created and maintained by Paul Boersma and David
+Weenink at the University of Amsterdam. It is widely used in phonetics
+and phonology and beyond. You can download for your platform at the
+following links:</p>
+<ul>
+<li><a href="http://www.fon.hum.uva.nl/praat/download_mac.html">Mac</a></li>
+<li><a href="http://www.fon.hum.uva.nl/praat/download_win.html">Windows</a></li>
+<li><a href="http://www.fon.hum.uva.nl/praat/download_linux.html">Linux</a></li>
+</ul>
+<p>It is regularly updated, so if you haven't downloaded a new version in
+a few months, you might take a look and see if there's a newer version available.
+The help files are extensive and include a set of
+<a href="http://www.fon.hum.uva.nl/praat/manual/Intro.html">introductory tutorials</a>. There
+is also a helpful <a href="http://uk.groups.yahoo.com/group/praat-users/">Praat Users group</a>.</p>
+<h3 id="instructions-for-tutorials">Instructions for tutorials</h3>
+<p>The files for the tutorials can be found
+<a href="http://media.krisyu.org/ldc-kiy">this directory</a> under
+<code>tutorials/processing-audio-files</code>
+(<a href="http://media.krisyu.org/ldc-kiy/tutorials/processing-audio-files/">here</a>). Once
+you've downloaded the <code>ldc-kiy</code> repository, you can navigate to the
+<code>tutorials/processing-audio-files/your-turn/20111213/</code> sub-directory to access
+all the files used in the tutorial. Ignore the other sub-directory in
+<code>your-turn</code> called <code>batch-demo</code>, which is only for the <a href="../processing-audio-files-praat">SoX tutorial</a>. </p>
+<p>The <code>tutorials/processing-audio-files/demo/</code> directory contains all the files used and generated during the
+tutorial for your reference (again, ignore the <code>batch-demo</code> directory). The <code>your-turn/</code> directory is for you to
+play in and contains only the raw audio files the tutorial works with,
+and not any of the generated files from the tutorial. </p>
+<hr>
+<h2 id="wzxhzdk10wzxhzdk11displaying-audio-file-information"><a id="display"></a>Displaying audio file information</h2>
+<ol>
+<li>Launch <code>Praat</code>. </li>
+<li>
+<p>Select <code>Open &gt; Open long sound...</code> from the menu at the top of
+the <code>Praat Objects</code> window, as shown below. </p>
+<p><div align = "center">
+<figure>
+<img src="/img/2013/06/praat-long-sound.jpg"
+alt = "Open long sound in Praat"
+width = "400">
+<figcaption> <tt>Open long sound</tt> command.</figcaption>
+</figure>
+</div></p>
+
+<p>A <code>LongSound</code> is distinct from a <code>Sound</code> object type in Praat. As
+it says in the <a href="http://www.fon.hum.uva.nl/praat/manual/LongSound.html">manual</a>:</p>
+<blockquote>
+<p>A LongSound object gives you the ability to view and label a
+sound file that resides on disk. You will want to use it for
+sounds that are too long to read into memory as a Sound object
+(typically, a few minutes).</p>
+</blockquote>
+</li>
+<li>
+<p>In the <code>your-turn/</code> directory, select
+    <code>20111213/raw/20111213-1-kiy-ap-framedwordlist.wav</code> to be
+    opened. Now there should be a <code>LongSound
+    20111213/raw/20111213-1-kiy-ap-framedwordlist</code> object listed in
+    your object window. Note that it is highlighted in light blue. That
+    means that it is selected. You can select an object by clicking on
+    it in the object window.</p>
+<p><div align = "center">
+  <figure>
+  <img src="/img/2013/06/praat-longsound-obj.jpg"
+  alt = "LongSound object in object window"
+   width = "400">
+  <figcaption> LongSound object
+  <tt>20111213/raw/20111213-1-kiy-ap-framedwordlist</tt> in object window.</figcaption>
+  </figure>
+  </div><p></p>
+4. With <code>LongSound 20111213/raw/20111213-1-kiy-ap-framedwordlist</code>
+   selected, click on the <code>Info</code> button at the bottom of the object
+   window, as shown below. This will pop up the <code>Praat Info</code> window
+   with information about the audio file displayed, including the file
+   format, duration of the file, sampling rate, and bit depth.<sup id="fnref-2"><a class="footnote-ref" href="#fn-2">2</a></sup></p>
+<p><div align = "center">
+<figure>
+<img src="/img/2013/06/praat-info.jpg"
+alt = "Display info about the LongSound object"
+width = "500">
+<figcaption> Display info about the LongSound object.</figcaption>
+</figure>
+</div></p>
+
+</li>
+</ol>
+<p>Here's what it says in the <code>Praat Info</code> window:</p>
+<div class="highlight"><pre><span></span>Object id: <span class="m">1</span>
+Object type: Sound
+Object name: <span class="m">20111213</span>-1-kiy-ap-framedwordlist
+Date: Thu Jun <span class="m">27</span> <span class="m">16</span>:45:21 <span class="m">2013</span>
+
+Duration: <span class="m">347</span>.832 seconds
+File name: /Users/amoebe/Documents/mind/proj/kiy-ldc/tutorials/processing-audio-files/your-turn/20111213/raw/20111213-1-kiy-ap-framedwordlist.wav
+File type: WAV
+Number of channels: <span class="m">2</span>
+Encoding: linear <span class="m">16</span> bit little-endian
+Sampling frequency: <span class="m">48000</span> Hz
+Size: <span class="m">16695936</span> samples
+Start of sample data: <span class="m">44</span> bytes from the start of the file
+</pre></div>
+
+
+<p>Some highlights:</p>
+<ul>
+<li><code>Object name</code> lists the basename of the file, without the file
+  extension.</li>
+<li><code>Duration</code> tells us that the file is 347.832 seconds in total.  </li>
+<li><code>File name</code> lists the full path of the file on the hard drive.</li>
+<li><code>File type</code> lists that the file format is a WAV file, a lossless file format.</li>
+<li><code>Number of channels</code> indicates that there are 2 channels in the file
+  (Channel 1 was for the consultant; Channel 2 for the
+  translator/elicitor).</li>
+<li><code>Encoding</code> indicates that the bit depth is 16 bit. (<code>little-endian</code>
+  indicates the byte ordering in the file.)  </li>
+<li><code>Sampling frequency</code> indicates the audio file was sampled at 48000 Hz (or equivalently, 48 kHz)</li>
+</ul>
+<p>The sample rate of 48kHz is much higher than needed for working with
+speech so we can <a href="#downsample">downsample</a> the file to keep the file
+size down. We also want to
+extract just one of the 2 channels, the channel reserved for the
+consultant (Channel 1), for further data analysis.</p>
+<hr>
+<h2 id="wzxhzdk12wzxhzdk13extracting-a-channel"><a id="channel"></a>Extracting a channel</h2>
+<p>None of the file modification steps we show next can be performed on a
+<code>LongSound</code> object, so you'll need to open
+<code>20111213-1-kiy-ap-framedwordlist.wav</code> again using the <code>Open &gt; Read
+from file...</code> command to open the file as a <code>Sound</code> object.</p>
+<div align = "center">
+    <figure>
+    <img src="/img/2013/06/praat-read.jpg"
+    alt = "Read from file in Praat"
+    width = "400">
+    <figcaption> <tt>Read from file</tt> command.</figcaption>
+    </figure>
+    </div>
+
+<p></p>
+
+<p>You can
+also remove the <code>LongSound</code> object by selecting it (click on it so
+it's highlighted in blue) and clicking the <code>Remove</code> button at the
+bottom of the object window.</p>
+<p>We recorded the elicitation session with two channels,</p>
+<ul>
+<li>Channel 1 (left channel): consultant</li>
+<li>Channel 2 (right channel): elicitor/translator</li>
+</ul>
+<p>To extract a channel from the stereo audio file, we do the following:</p>
+<ol>
+<li>
+<p>With <code>Sound 20111213/raw/20111213-1-kiy-ap-framedwordlist</code> selected
+   in the Object Window (so that it is highlighted in blue), click on
+   the <code>Convert</code> menu at the bottom right of the Object window and
+   select <code>Extract one channel...</code>. </p>
+<p><div align = "center">
+<figure>
+<img src="/img/2013/06/praat-extract.jpg"
+alt = "Read from file in Praat"
+width = "500">
+<figcaption> <tt>Extract one channel</tt> command.</figcaption>
+</figure>
+</div></p>
+
+</li>
+<li>
+<p>In the <code>Sound: Extract channel</code> dialog box, type <code>1</code> in <code>Channel
+   (number, Left, or Right)</code> to extract the Left Channel, which is the
+   consultant's channel for the file and click <code>OK</code>. A new <code>Sound
+   20111213/raw/20111213-1-kiy-ap-framedwordlist</code> object will appear
+   immediately under the original one and will be already selected.</p>
+</li>
+<li>
+<p>If you'd like to save this new file, you can do so with the top
+   menu command <code>Save &gt; Save as WAV file...</code> in a new folder you
+   create in <code>your-turn/20111213/</code> called <code>data/</code>.</p>
+</li>
+<li>
+<p>You can also click on the <code>View and Edit</code> button near the top righthand
+   corner in the Object Window (with the new Sound object selected) to
+   examine the extracted channel. </p>
+</li>
+</ol>
+<hr>
+<h2 id="wzxhzdk14wzxhzdk15downsampling"><a id="downsample"></a>Downsampling</h2>
+<p>Below, we downsample the sampling rate of the file
+ <code>20111213-1-kiy-ap-framedwordlist.wav</code> from 48kHz to 16kHz and write
+ the downsampled file to a new file
+ <code>20111213-1-kiy-ap-framedwordlist-stereo.wav</code> in a new directory in
+ <code>your-turn/20111213/1</code> we call <code>data/</code>. We give the new filename a
+ <code>-stereo</code> suffix to remind ourselves that this file still has 2
+ channels. It's good to keep the stereo (2-channel) file around for
+ reference, since it includes information about how items were
+ elicited if we need to check those details later.</p>
+<p><strong>Warning: I've had Praat crash on me rather consistently trying to
+  resample large files, including when I tried to downsample the
+  original audio file <code>20111213-1-kiy-ap-framedwordlist.wav</code>. Try
+  downsampling <em>after extracting the consultant's channel</em>, as
+  described <a href="#channel">above</a>.</strong></p>
+<ol>
+<li>
+<p>With the new, single-channel <code>Sound 20111213/raw/20111213-1-kiy-ap-framedwordlist</code>
+   selected, click on the <code>Convert</code> menu at the bottom right of the
+   Object window and select <code>Resample</code>.</p>
+<p><div align = "center">
+ <figure>
+    <img src="/img/2013/06/praat-resample.jpg"
+ alt = "Click on <code>Resample</code> command"
+ width = "500">
+ <figcaption> <tt>Resample</tt> command.</figcaption>
+ </figure>
+ </div></p>
+</li>
+<li>
+<p>In the <code>Sound:Resample</code> dialog box, type in <code>16000</code> in <code>New
+   sampling frequency (Hz)</code> to resample to 16kHz. You can leave
+   <code>Precision</code> at the default of <code>50</code>. This determines the
+   <a href="http://www.fon.hum.uva.nl/praat/manual/Sound__Resample___.html">quality of the interpolation</a>
+   used to reconstruct the signal in resampling. Click <code>OK</code>. You may
+   have to wait a bit, but a new <code>Sound
+   20111213-1-kiy-ap-framedwordlist</code> object will appear below the
+   original, selected (highlighted in blue).</p>
+</li>
+<li>
+<p>If you'd like to save this new file, you can do so with the top
+   menu command <code>Save &gt; Save as WAV file...</code> in a new folder you
+   create in <code>your-turn/20111213/</code> called <code>data/</code>.</p>
+</li>
+<li>
+<p>You can also check that the sampling rate is indeed 16kHz by
+   re-opening the newly saved file as a <code>LongSound</code> object and
+   displaying information about the audio file, as described in the
+   <a href="#display">first section</a>.</p>
+</li>
+</ol>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn-1">
+<p>I don't know of a way to reduce bit depth in Praat. See the
+<a href="../processing-audio-files-sox/#bit">SoX tutorial</a> for a way to do it
+with SoX. There is also a way to do it in Audacity by setting <code>Default
+Sample Format</code> in <code>Preferences &gt; Quality &gt;</code> before opening the sound
+file in the program, as described in the
+<a href="http://manual.audacityteam.org/man/Quality_Preferences">manual</a>.&#160;<a class="footnote-backref" href="#fnref-1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn-2">
+<p>It's critical to open the file as a <code>LongSound</code> to get this
+information. If you open the file as a <code>Sound</code> object using <code>Open &gt;
+Read from file...</code>, clicking on the <code>Info</code> button will display (after
+a bit of a wait) properties of the signal like average, min, and max amplitude and will
+not display file format or bit depth.&#160;<a class="footnote-backref" href="#fnref-2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'krisyu'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'processing-audio-files-praat';
+                var disqus_url = 'http://kmyu.github.io/blog/processing-audio-files-praat.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-twitter fa-lg"></i><span class="icon-label">Latest Tweets</span></h4></li>
+    <div id="twitter_timeline">
+        <a class="twitter-timeline" data-chrome="noheader" href="https://twitter.com/linguist_krisyu" data-widget-id="716655349130989568">Tweets by linguist_krisyu</a>
+    </div>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2017 Kristine M. Yu
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://kmyu.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://kmyu.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://kmyu.github.io/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'krisyu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Piwik -->
+    <script type="text/javascript">
+        var _paq = _paq || [];
+        _paq.push(["trackPageView"]);
+        _paq.push(["enableLinkTracking"]);
+
+        (function() {
+            var u=(("https:" == document.location.protocol) ? "https://www.piwik.krisyu.org/" : "http://www.piwik.krisyu.org/");
+            _paq.push(["setTrackerUrl", u+"piwik.php"]);
+            _paq.push(["setSiteId", "2"]);
+            var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+            g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Piwik Code -->
+
+</body>
+</html>

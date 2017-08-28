@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Working with f0 contours - Kristine M. Yu</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="http://kmyu.github.io/drafts/working-with-f0-contours.html">
+
+        <meta name="author" content="Kristine Yu" />
+        <meta name="keywords" content="ldc-kiy,fieldwork,praat,tutorial" />
+        <meta name="description" content="This is supplemental material for The experimental state of mind in elicitation: illustrations from tonal fieldwork that follows up on Section 2.4, which recast Hyman (2007)&#39;s work on tonotactics in Thlantlang Lai in terms of experimental design. It introduces additional examples of using experimental design principles to generalize …" />
+
+        <meta property="og:site_name" content="Kristine M. Yu" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Working with f0 contours"/>
+        <meta property="og:url" content="http://kmyu.github.io/drafts/working-with-f0-contours.html"/>
+        <meta property="og:description" content="This is supplemental material for The experimental state of mind in elicitation: illustrations from tonal fieldwork that follows up on Section 2.4, which recast Hyman (2007)&#39;s work on tonotactics in Thlantlang Lai in terms of experimental design. It introduces additional examples of using experimental design principles to generalize …"/>
+        <meta property="article:published_time" content="2013-10-31" />
+            <meta property="article:section" content="articles" />
+            <meta property="article:tag" content="ldc-kiy" />
+            <meta property="article:tag" content="fieldwork" />
+            <meta property="article:tag" content="praat" />
+            <meta property="article:tag" content="tutorial" />
+            <meta property="article:author" content="Kristine Yu" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://kmyu.github.io/theme/css/bootstrap.cosmo.min.css" type="text/css"/>
+    <link href="http://kmyu.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://kmyu.github.io/theme/css/pygments/monokai.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://kmyu.github.io/theme/css/style.css" type="text/css"/>
+        <link href="http://kmyu.github.io/static/custom.css" rel="stylesheet">
+
+        <link href="http://kmyu.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Kristine M. Yu ATOM Feed"/>
+
+
+
+        <link href="http://kmyu.github.io/feeds/articles.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Kristine M. Yu articles ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://kmyu.github.io/" class="navbar-brand">
+Kristine M. Yu            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="/research">Research</a></li>
+                    <li><a href="/teaching">Teaching</a></li>
+                    <li><a href="/code">Code</a></li>
+                    <li><a href="/blog">Blog</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://kmyu.github.io/blog/archives/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://kmyu.github.io/drafts/working-with-f0-contours.html"
+                       rel="bookmark"
+                       title="Permalink to Working with f0 contours">
+                        Working with f0 contours
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-10-31T11:12:00-04:00"> 2013 October 31</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://kmyu.github.io/blog/tag/ldc-kiy.html">ldc-kiy</a>
+        /
+	<a href="http://kmyu.github.io/blog/tag/fieldwork.html">fieldwork</a>
+        /
+	<a href="http://kmyu.github.io/blog/tag/praat.html">praat</a>
+        /
+	<a href="http://kmyu.github.io/blog/tag/tutorial.html">tutorial</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>This is supplemental material for <em>The experimental state of mind in
+elicitation: illustrations from tonal fieldwork</em> that follows up on
+Section 2.4, which recast Hyman (2007)'s work on tonotactics in
+Thlantlang Lai in terms of experimental design. It introduces additional examples of using 
+experimental design principles to generalize to elicitation methods
+beyond Pike's toneme discovery procedure.</p>
+<!-- PELICAN_END_SUMMARY -->
+
+<p>The rest of the tutorial discusses headphones for listening to
+speech sound files and how to annotate sound files in Praat and has
+the following sections: </p>
+<ol>
+<li><a href="#intro">Introduction</a></li>
+<li><a href="#headphones">Headphones</a></li>
+<li><a href="#mark">Marking timepoints in sound files</a></li>
+<li><a href="#annot">Annotating timepoints in sound files</a></li>
+</ol>
+<h2 id="wzxhzdk20wzxhzdk21-introduction"><a id="intro"></a> Introduction</h2>
+<p>A soundfile is hard to access data from when it is an undifferentiated
+blob. It's really helpful to have timestamps marking relevant events
+so that one can easily go right to the part in the recording corresponding to
+these events. One might keep a running list of timepoints during the
+elicitation session when crucial bits happen. Or one might modify the
+soundfile itself to indicate landmarks.</p>
+<p>The solution one can implement
+in Praat is to keep timepoints and associated events in a text file
+called a
+<a href="http://www.fon.hum.uva.nl/praat/manual/TextGrid.html">TextGrid</a>,
+separate from the audio file. The sound file and the TextGrid can be
+opened together to link them via the timepoints (which serve as
+<a href="../organizing-elicitation-items/#hash">dictionary keys</a> so that one
+can easily access any given annotated timepoint and/or labeled
+event. The advantage of this solution over keeping a running list of
+timepoints in a journal is that the annotations can be directly linked
+up with the sound file. The advantage of this solution over modifying
+the original sound file is that the annotation file is extremely
+lightweight and portable (as it is just a plain text file, as shown below) and can be readily
+processed with any text processing scripts for efficient batch
+processing and modifications to annotations have nothing to do with
+the soundfile so there's no potential for accidental changes to the
+actual recording or opportunities to corrupt it.</p>
+<div class="highlight"><pre><span></span><span class="c1"># The first bit of 20111213-2-kiy-ap-framedwordlist.TextGrid</span>
+<span class="c1"># I&#39;ve added some comments to explain what the text means.</span>
+<span class="c1"># For more on what tiers are, read on in the tutorial.</span>
+File <span class="nb">type</span> <span class="o">=</span> <span class="s2">&quot;ooTextFile&quot;</span>
+Object <span class="nv">class</span> <span class="o">=</span> <span class="s2">&quot;TextGrid&quot;</span>
+
+<span class="nv">xmin</span> <span class="o">=</span> <span class="m">0</span> <span class="c1"># this is a timestamp for the start of the file</span>
+<span class="nv">xmax</span> <span class="o">=</span> <span class="m">256</span>.4826875 <span class="c1"># timestamp for end of file</span>
+tiers? &lt;exists&gt; 
+<span class="nv">size</span> <span class="o">=</span> <span class="m">4</span> <span class="c1"># number of tiers</span>
+item <span class="o">[]</span>: 
+    item <span class="o">[</span><span class="m">1</span><span class="o">]</span>: <span class="c1"># first tier</span>
+        <span class="nv">class</span> <span class="o">=</span> <span class="s2">&quot;IntervalTier&quot;</span> <span class="c1"># Tier 1 is an Interval Tier</span>
+        <span class="nv">name</span> <span class="o">=</span> <span class="s2">&quot;target&quot;</span> <span class="c1"># name of Tier 1</span>
+        <span class="nv">xmin</span> <span class="o">=</span> <span class="m">0</span> <span class="c1"># timestamp for start of Tier 1 </span>
+        <span class="nv">xmax</span> <span class="o">=</span> <span class="m">256</span>.4826875 <span class="c1"># timestamp for end of Tier 1</span>
+        intervals: <span class="nv">size</span> <span class="o">=</span> <span class="m">81</span> <span class="c1"># number of intervals in Tier 1</span>
+        intervals <span class="o">[</span><span class="m">1</span><span class="o">]</span>: <span class="c1"># first interval in Tier 1</span>
+            <span class="nv">xmin</span> <span class="o">=</span> <span class="m">0</span> <span class="c1"># timestamp for start of Interval 1 in Tier 1</span>
+            <span class="nv">xmax</span> <span class="o">=</span> <span class="m">24</span>.747999999999998 <span class="c1"># timestamp: end of Interval 1,Tier 1</span>
+            <span class="nv">text</span> <span class="o">=</span> <span class="s2">&quot;xxx&quot;</span> <span class="c1"># the text label for Interval 1, Tier 1</span>
+        intervals <span class="o">[</span><span class="m">2</span><span class="o">]</span>: <span class="c1"># second interval in Tier 1</span>
+            <span class="nv">xmin</span> <span class="o">=</span> <span class="m">24</span>.747999999999998 
+            <span class="nv">xmax</span> <span class="o">=</span> <span class="m">25</span>.492 
+            <span class="nv">text</span> <span class="o">=</span> <span class="s2">&quot;xxx&quot;</span> 
+        intervals <span class="o">[</span><span class="m">3</span><span class="o">]</span>: <span class="c1"># third interval in Tier 1</span>
+            <span class="nv">xmin</span> <span class="o">=</span> <span class="m">25</span>.492 
+            <span class="nv">xmax</span> <span class="o">=</span> <span class="m">38</span>.252 
+            <span class="nv">text</span> <span class="o">=</span> <span class="s2">&quot;xxx&quot;</span> 
+        intervals <span class="o">[</span><span class="m">4</span><span class="o">]</span>:
+            <span class="nv">xmin</span> <span class="o">=</span> <span class="m">38</span>.252 
+            <span class="nv">xmax</span> <span class="o">=</span> <span class="m">40</span>.17475333677905 
+            <span class="nv">text</span> <span class="o">=</span> <span class="s2">&quot;xxx&quot;</span> 
+        intervals <span class="o">[</span><span class="m">5</span><span class="o">]</span>:
+            <span class="nv">xmin</span> <span class="o">=</span> <span class="m">40</span>.17475333677905 
+            <span class="nv">xmax</span> <span class="o">=</span> <span class="m">46</span>.708 
+            <span class="nv">text</span> <span class="o">=</span> <span class="s2">&quot;xxx&quot;</span> 
+        intervals <span class="o">[</span><span class="m">6</span><span class="o">]</span>:
+            <span class="nv">xmin</span> <span class="o">=</span> <span class="m">46</span>.708 
+            <span class="nv">xmax</span> <span class="o">=</span> <span class="m">53</span>.724 
+            <span class="nv">text</span> <span class="o">=</span> <span class="s2">&quot;xxx&quot;</span> 
+        intervals <span class="o">[</span><span class="m">7</span><span class="o">]</span>:
+            <span class="nv">xmin</span> <span class="o">=</span> <span class="m">53</span>.724 
+            <span class="nv">xmax</span> <span class="o">=</span> <span class="m">54</span>.08763090207048 
+            <span class="nv">text</span> <span class="o">=</span> <span class="s2">&quot;paRai-li:1&quot;</span> 
+        intervals <span class="o">[</span><span class="m">8</span><span class="o">]</span>:
+            <span class="nv">xmin</span> <span class="o">=</span> <span class="m">54</span>.08763090207048 
+            <span class="nv">xmax</span> <span class="o">=</span> <span class="m">54</span>.476 
+            <span class="nv">text</span> <span class="o">=</span> <span class="s2">&quot;li-paRai:R&quot;</span> 
+</pre></div>
+
+
+<h3 id="instructions-for-tutorials">Instructions for tutorials</h3>
+<p>The files for the tutorials can be found in my
+<a href="http://media.krisyu.org/ldc-kiy/tutorials">here</a> in
+<code>annotating-audio-files/</code>
+(<a href="http://media.krisyu.org/ldc-kiy/tutorials/annotating-audio-files/">here</a>). If
+you download the whole
+<a href="http://media.krisyu.org/ldc-kiy/tutorials/annotating-audio-files/">annotating-audio-files directory</a>,
+you can navigate to the <code>your-turn/</code> sub-directory to access all the files used in the tutorial. </p>
+<p>The <code>tutorials/annotating-audio-files/demo/</code> directory contains all
+the files used and generated during the tutorial for your
+reference. The <code>your-turn/</code> directory is for you to play in and
+contains only the raw audio file the tutorial works with and one
+"blank" TextGrid file.</p>
+<h2 id="wzxhzdk22wzxhzdk23headphones"><a id="text"></a>Headphones</h2>
+<p>For analyzing sound files, it's helpful to be able to listen to them
+through headphones, especially if the signal is weak. Headphones help
+isolate the speech signal from the ambient sounds in the external
+environment and help make details of the sound more apparent. It's
+important to use headphones that have a <strong>flat frequency response</strong> so
+that they don't alter the sound quality. Headphones for listening to
+music sometimes have bass and/or treble emphasis.</p>
+<p>Below, we show a
+frequency response comparison from
+<a href="www.headphone.com/buildAGraph.php">www.headphone.com/buildAGraph.php</a>
+for four headphones: <a href="http://pro.sony.com/bbsc/ssr/product-MDR7506">Sony MDR-7506</a> (blue),
+<a href="http://en-us.sennheiser.com/professional-dj-headphones-noise-cancelling-hd-280-pro">Sennheiser HD280 Pro</a> (red), <a href="http://avlex.com/products/hd-668b/">Superlux HD 668B</a> (green), and
+<a href="http://en-us.sennheiser.com/over-ear-headphone-momentum-stereo">Sennheiser Momentum</a> (orange). The Superlux HD 668B has bass emphasis with a large plateau
+below 100 Hz, and the Sennheiser Momentum has some bass emphasis with
+a large dip in frequency response in the treble region around 5000
+Hz, and the Superlux HD 668B has a peak for
+emphasis in the higher treble range for "higher highs". In contrast,
+the Sony MDR-7506 and Sennheiser HD280 Pro both have quite flat
+frequency responses: this is what we want for phonetic data analysis. </p>
+<div align = "center">
+<figure>
+<img
+src="/static/blog/img/2013/06/freqresponse.png"
+alt = "Frequency response comparison for Sony MDR-7506, Sennheiser
+HD280 Pro, Superlux HD 668B, and Sennheiser Momentum." width = "1000">
+<figcaption>Frequency response comparison for Sony MDR-7506, Sennheiser
+HD280 Pro, Superlux HD 668B, and Sennheiser Momentum. [<a href = "http://www.headphone.com/buildAGraph.php">www.headphone.com/buildAGraph.php</a>]</figcaption>
+</figure>
+</div>
+
+<p></p>
+
+<hr>
+<h2 id="wzxhzdk24wzxhzdk25marking-timepoints-in-sound-files"><a id="mark"></a>Marking timepoints in sound files</h2>
+<p>In this section, we explain how to perform <strong>segmentation</strong> of the
+sound file, i.e. how to set down timepoints marking relevant
+events. We'll be working with <code>20111213-2-kiy-ap-framedwordlist.wav</code>
+in <code>ldc-kiy/tutorials/annotating-audio-files/your-turn/</code>, which is
+already downsampled and includes only the consultant's channel.</p>
+<h3 id="creating-a-new-textgrid">Creating a new TextGrid</h3>
+<ol>
+<li>
+<p>Launch <code>Praat</code>.</p>
+</li>
+<li>
+<p>Select <code>Open &gt; Open long sound file...</code> from the menu at the top of
+the <code>Praat Objects</code> window, as shown below.</p>
+<p><div align = "center">
+<figure>
+<img src="/static/blog/img/2013/06/praat-long-sound.jpg"
+alt = "Open long sound file in Praat"
+width = "400">
+<figcaption> <tt>Open long sound file</tt> command.</figcaption>
+</figure>
+</div></p>
+
+</li>
+<li>
+<p>Select <code>20111213-2-kiy-ap-framedwordlist.wav</code> in the directory
+   <code>ldc-kiy/tutorials/annotating-audio-files/your-turn/</code> and click on
+   <code>Choose</code>. There should now be a <code>LongSound
+   20111213-2-kiy-ap-framedwordlist.wav</code> object listed in the Object Window.</p>
+</li>
+<li>
+<p>You can <a href="../processing-audio-files-praat/#display">display the audio file information</a> to confirm that the
+   sampling rate is 16kHz, the bit depth is 16-bit, and that there is
+   a single channel.</p>
+</li>
+<li>
+<p>The <code>LongSound 20111213-2-kiy-ap-framedwordlist.wav</code> object should
+   be selected, i.e., highlighted in blue, already. With it selected,
+   click on the <code>Annotate &gt; To Text Grid...</code> command on the right, as
+   shown below:</p>
+<p><div align = "center">
+<figure>
+<img src="/static/blog/img/2013/06/praat-annotate.jpg"
+alt = "The <tt>To Text Grid...</tt> command"
+width = "450"&gt;<br>
+<figcaption> The <tt>To Text Grid...</tt> command.</figcaption>
+</figure>
+</div></p>
+
+</li>
+<li>
+<p>In the <code>LongSound: To TextGrid...</code> dialog box, there are two
+   fields: <code>Tier names</code> and <code>Point tiers</code>. Praat distinguishes between
+   two types of timestamps and separates annotation for them into
+   different <em>tiers</em>:</p>
+<ul>
+<li><strong>Interval tiers</strong> are for marking events that span some
+    duration, like a vowel, a word, a sentence.</li>
+<li><strong>Point tiers</strong> are for marking events that occur
+    instantaneously at a single point in time, like the midpoint
+    of a vowel, the pitch peak in a word, the right edge of a
+    prosodic phrase.</li>
+</ul>
+</li>
+</ol>
+<p>Include tier names for both interval and point tiers in <code>Tier
+   names</code>, separated by spaces, and in order from the topmost
+   tier (closest to the bottom of the waveform/spectrogram) to
+   the bottomost bier (at the bottom of the window). Type in the
+   tiernames for any point tiers again in <code>Point tiers</code>.</p>
+<p>For our file, we'll start with just an <code>item</code> tier, to set
+   boundaries for each of the elicitation items, which are listed in
+   <code>20111213-2-kiy-ap-framedwordlist.txt</code> in <code>your-turn</code>. So type
+   <code>item</code> in the field <code>Tier names</code> and leave <code>Point tiers</code> blank, and
+   click <code>OK</code>:</p>
+<div align = "center">
+<figure>
+<img src="/static/blog/img/2013/06/praat-tier-dialog.jpg"
+alt = "The LongSound: To Text Grid...dialog box" width = "450"><br>
+<figcaption> The <code>LongSound: To TextGrid...</code> dialog box.</figcaption>
+</figure>
+</div>
+
+<p></p>
+
+<h3 id="editing-the-textgrid">Editing the TextGrid</h3>
+<ol>
+<li>
+<p>Now there should be a new <code>TextGrid
+   20111213-2-kiy-ap-framedwordlist</code> object listed under <code>LongSound
+   20111213-2-kiy-ap-framedwordlist.wav</code> in the Object window. It
+   should already be selected. To annotate the sound file in the
+   TextGrid, we select both of the objects together. Hit <code>Shift</code> and
+   left-click on <code>LongSound 20111213-2-kiy-ap-framedwordlist.wav</code> to
+   select that as well. Then click on <code>View &amp; Edit</code>:</p>
+<p><div align = "center">
+<figure>
+<img src="/static/blog/img/2013/06/praat-select-objects.jpg"
+alt = "Select the LongSound and TextGrid objects"
+width = "450"><br>
+<figcaption> Select the <tt>LongSound</tt> and <tt>TextGrid</tt> objects.</figcaption>
+</figure>
+</div></p>
+
+</li>
+<li>
+<p>Now the sound file and TextGrid are linked up in a way that you can
+   annotate the sound file "directly" and have your annotations stored in the
+   TextGrid file! Perhaps the most important thing about working with TextGrids is to
+   <strong>remember to save your work</strong>. You can do this with the <code>File &gt;
+   Save TextGrid as text file...</code> command, shown below:</p>
+<p><div align = "center">
+<figure>
+<img src="/static/blog/img/2013/06/praat-save-textgrid.jpg"
+alt = "Save TextGrid as text file... command"
+width = "450"><br>
+<figcaption> <tt>Save TextGrid as text file...</tt> command.</figcaption>
+</figure>
+</div></p>
+
+</li>
+<li>
+<p>The screencast below gives an introduction to
+   marking interval boundaries in the textgrid and labeling the
+   intervals, including:</p>
+<ul>
+<li><a href="http://www.fon.hum.uva.nl/praat/manual/TextGridEditor.html">Creating new tiers and intervals and playing intervals</a></li>
+<li><a href="http://www.fon.hum.uva.nl/praat/manual/Keyboard_shortcuts.html">Navigating the soundfile and textgrid with keyboard shortcuts</a></li>
+</ul>
+</li>
+</ol>
+<p>The files used in the tutorial are in <code>tutorials/annotating-audio-files/your_turn/</code>:</p>
+<ul>
+<li><code>20111213-2-kiy-ap-framedwordlist.wav</code> is the sound file</li>
+<li><code>20111213-2-kiy-ap-framedwordlist.txt</code> lists the elicitation items elicited</li>
+</ul>
+<p align = "center">
+<video controls>
+  <source src="/static/blog/videos/2013/06/marking-timepoints.mp4" type="video/mp4">
+  <source src="/static/blog/videos/2013/06/marking-timepoints.ogv" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+Screencast: Marking interval boundary timepoints in the TextGrid.
+</p>
+
+<hr>
+<h2 id="wzxhzdk26wzxhzdk27annotating-timepoints-in-sound-files"><a id="annot"></a>Annotating timepoints in sound files</h2>
+<p>We'll finish up with showing how to add textual labels to intervals, and show how to use a script to efficiently do this. </p>
+<h3 id="adding-text-labels-to-intervals">Adding text labels to intervals</h3>
+<p>In the screencast below, we show how to add textual annotations to a
+TextGrid file. The files used are in <code>tutorials/annotating-audio-filex/your_turn/</code>:</p>
+<ul>
+<li><code>20111213-2-kiy-ap-framedwordlist.wav</code> is the sound file</li>
+<li><code>20111213-2-kiy-ap-framedwordlist.txt</code> lists the elicitation items elicited</li>
+<li><code>20111213-2-kiy-ap-framedwordlist_item_newlines_blank.TextGrid</code> is
+  the TextGrid we start with, which has boundaries set down already in
+  the appropriate places to mark elicitation items.</li>
+</ul>
+<p>The screencast includes:</p>
+<ul>
+<li>Adding textual annotations to label intervals</li>
+<li><a href="http://www.fon.hum.uva.nl/praat/manual/Phonetic_symbols.html">Using phonetic symbols in textgrid labelling</a>      </li>
+</ul>
+<p align = "center">
+<video controls>
+  <source src="/static/blog/videos/2013/06/annotating-timepoints.mp4" type="video/mp4">
+  <source src="/static/blog/videos/2013/06/annotating-timepoints.ogv" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+Screencast: Annotating interval boundary timepoints in the TextGrid.
+</p>
+
+<h3 id="using-a-script-to-semi-automatically-label-intervals">Using a script to semi-automatically label intervals</h3>
+<p>Wait a minute---why are we typing all these labels out again in the
+TextGrids when they are already in our textfile
+<code>20111213-2-kiy-ap-framedwordlist.txt</code>(http://media.krisyu.org/ldc-kiy/tutorials/annotating-audio-files/20111213-2-kiy-ap-framedwordlist.txt)
+and spreadsheet <code>20111213-2-kiy-ap-framedwordlist.xlsx</code>(http://media.krisyo.org/ldc-kiy/tutorials/annotating-audio-files/20111213-2-kiy-ap-framedwordlist.xlsx)?</p>
+<p>Good question! We can save some time and reduce the change of
+introducing errors from typos by extracting the labels from the
+textfile or spreadsheet and then using a <a href="http://www.fon.hum.uva.nl/praat/manual/Scripting.html">Praat script</a> to populate the
+TextGrid intervals with the labels. We'll show how to extract labels from a
+spreadsheet in Excel in the section
+<a href="#excel-labels">Creating files for semi-automatic TextGrid annotation from Excel</a> and how to extract labels from a
+textfile using command-line utilities in the section <a href="#shell-labels">Extracting labels for TextGrids from text files in the shell</a>. Then we'll show how to use a Praat script to use these labels to
+annotate the intervals in the TextGrid in <a href="#praat-script">Semi-automatic TextGrid annotation with a script</a>.</p>
+<h4 id="wzxhzdk28wzxhzdk29-creating-files-for-semi-automatic-textgrid-annotation-from-excel"><a id = "excel-labels"></a> Creating files for semi-automatic TextGrid annotation from Excel</h4>
+<ol>
+<li>Launch Excel and open <code>20111213-2-kiy-ap-framedwordlist.xlsx</code><a href="http://media.krisyu.org/ldc-kiy/tutorials/annotating-audio-files/20111213-2-kiy-ap-framedwordlist.xlsx">here</a></li>
+<li>
+<p>Let's say we want to annotate the intervals in the <code>item</code> tier in
+   the TextGrid file with the orthographic representations for
+   Kirikiri. Then we can select the column of Kirikiri (not including
+   the header row) and hit <code>Edit &gt; Copy</code>:</p>
+<p><div align = "center">
+<figure>
+<img src="/static/blog/img/2013/06/excel-copy.jpg"
+alt = "Copying the Kirikiri labels from the spreadsheet." width = "450"><br>
+<figcaption>Copying the Kirikiri labels from the spreadsheet.</figcaption>
+</figure>
+</div><p></p>
+3. Now we can launch some text-editing application, for instance
+   Notepad on Windows or TextEdit for Mac and invoke a Paste
+   command. The important thing is to make sure that you are working
+   in <strong>plain text</strong>. For instance, if you do an <code>Edit &gt; Paste</code>
+   command without first invoking <code>Format &gt; Make Plain Text</code> in
+   TextEdit, you get strange table-like formatting, as shown below.   </p>
+<p><div align = "center">
+<figure>
+<img src="/static/blog/img/2013/06/textedit-plain.jpg"
+alt = "Make Plain Text in TextEdit." width = "450"><br>
+<figcaption><code>Make Plain Text</code> command in TextEdit.</figcaption>
+</figure>
+</div><p></p>
+4. Save your text file. The text files we'll use further on in the
+   tutorials are in <code>tutorials/annotating-audio-files/your_turn/</code>:</p>
+<ul>
+<li><a href="http://media.krisyu.org/ldc-kiy/tutorials/annotating-audio-files/numeric-labels.txt"><code>numeric-labels.txt</code></a>: item numbers</li>
+<li><a href="http://media.krisyu.org/ldc-kiy/tutorials/annotating-audio-files/kiy-labels.txt"><code>kiy-labels.txt</code></a>: Kirikiri orthographic representations</li>
+</ul>
+</li>
+</ol>
+<!--<p align = "center">
+<video controls>
+  <source src="/static/blog/videos/2013/06/label-from-excel.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+Screencast: Extracting labels for TextGrid annotation from a spreadsheet.
+</p>-->
+
+<h4 id="wzxhzdk30wzxhzdk31-extracting-labels-for-textgrids-from-text-files-in-the-shell"><a id="shell-labels"></a> Extracting labels for TextGrids from text files in the shell</h4>
+<p>We start with the tab-delimited text file <code>20111213-2-kiy-ap-framedwordlist.txt</code><a href="http://media.krisyu.org/ldc-kiy/tutorials/annotating-audio-files/20111213-2-kiy-ap-framedwordlist.txt">here</a>, which looks like this:</p>
+<div class="highlight"><pre><span></span>item    gloss   kirikiri        tone1   tone2   suffix  word1   word2
+<span class="m">1</span>       <span class="k">for</span> the bandicoot       paRai li        <span class="m">1</span>       R       benefactive     paRai   li
+<span class="m">2</span>       <span class="k">for</span> the bat     torii li        <span class="m">1</span>       R       benefactive     torii   li
+<span class="m">3</span>       <span class="k">for</span> the pigeon  maRuu li        <span class="m">1</span>       R       benefactive     maRuu   li
+<span class="m">4</span>       <span class="k">for</span> the dog     nabii li        <span class="m">2</span>       R       benefactive     nabii   li
+<span class="m">5</span>       <span class="k">for</span> the gecko   kaza li <span class="m">2</span>       R       benefactive     kaza    li
+</pre></div>
+
+
+<p>Let's say we want to label the intervals in the TextGrid with the
+   Kirikiri orthographic representations. We can extract the
+   <code>kirikiri</code> column and write it to a new text file <code>kiy-labels.txt</code>
+   using <code>cut</code>:</p>
+<div class="highlight"><pre><span></span>cut -f3 <span class="m">20111213</span>-2-kiy-ap-framedwordlist.txt <span class="p">|</span> sed <span class="s1">&#39;1d&#39;</span> &gt; kiy-labels.txt
+</pre></div>
+
+
+<p>The <code>-f3</code> says to extract the 3rd field. <code>sed '1d'</code> removes the
+first line, which is the header <code>kirikiri</code>. Here's an extract from
+the new file:</p>
+<div class="highlight"><pre><span></span>amoebe@moebius :: more kiy-labels.txt
+paRai li
+torii li
+maRuu li
+nabii li
+kaza li
+fivaa li
+fO li
+</pre></div>
+
+
+<p>We can do the same to extract the <code>item</code> column if we want to label
+  the intervals in the TextGrid with numeric item IDs, but another
+  way we could create <code>item</code> labels is to simply create a new text
+  file with the integers 1-24, using <code>jot</code>:</p>
+<div class="highlight"><pre><span></span>jot <span class="m">24</span> <span class="m">1</span> &gt;&gt; numeric-labels.txt
+</pre></div>
+
+
+<p>The first 10 lines in the file look like this:</p>
+<div class="highlight"><pre><span></span>amoebe@moebius :: more numeric-labels.txt 
+<span class="m">1</span>
+<span class="m">2</span>
+<span class="m">3</span>
+<span class="m">4</span>
+<span class="m">5</span>
+<span class="m">6</span>
+<span class="m">7</span>
+<span class="m">8</span>
+<span class="m">9</span>
+<span class="m">10</span>
+</pre></div>
+
+
+<p>It turns out, as we'll see in the <a href="#praat-script">next section</a>,
+that it can also be helpful to have blank lines between each
+label. These commands do the trick, with some help from <code>sed
+G</code>; the <code>sed '$d'</code> command is for stripping the trailing newline at
+the end of the file:</p>
+<div class="highlight"><pre><span></span>jot <span class="m">24</span> <span class="m">1</span> <span class="p">|</span> sed G <span class="p">|</span> sed <span class="s1">&#39;$d&#39;</span> &gt; numeric-labels-newlines.txt
+cut -f3 <span class="m">20111213</span>-2-kiy-ap-framedwordlist.txt <span class="p">|</span> sed <span class="s1">&#39;1d&#39;</span> <span class="p">|</span> sed G <span class="p">|</span>
+sed <span class="s1">&#39;$d&#39;</span> &gt;  kiy-labels-newlines.txt
+</pre></div>
+
+
+<p>The file <code>kiy-labels-newlines.txt</code> looks like this:</p>
+<div class="highlight"><pre><span></span>amoebe@moebius :: more kiy-labels-newlines.txt
+paRai li
+
+torii li
+
+maRuu li
+
+nabii li
+
+kaza li
+
+fivaa li
+</pre></div>
+
+
+<h4 id="wzxhzdk32wzxhzdk33-semi-automatic-textgrid-annotation-with-a-script"><a id="praat-script"></a> Semi-automatic TextGrid annotation with a script</h4>
+<p>In the screencast below, we show how to add textual annotations to a
+TextGrid file semi-automatically using a script. First we demonstrate
+how to annotated with the <code>kiy-labels.txt</code> file and then we annotate
+with the <code>numeric-labels.txt</code> file. The files used are in <code>tutorials/annotating-audio-filex/your_turn/</code>:</p>
+<ul>
+<li><code>20111213-2-kiy-ap-framedwordlist.wav</code> is the sound file</li>
+<li>
+<p><code>label_from_text_file2.praat</code> is the Praat script (which is just a
+  text file)</p>
+</li>
+<li>
+<p><code>20111213-2-kiy-ap-framedwordlist_item_blank.TextGrid</code> is
+  the TextGrid we start with, which has boundaries set down already in
+  the appropriate places to mark elicitation items. It also contains
+  <code>xxx</code> annotations in the intervals between the intervals for
+  elicitation items.</p>
+</li>
+<li><code>kiy-labels.txt</code> and <code>numeric-labels.txt</code> contain the labels that go
+  in <code>20111213-2-kiy-ap-framedwordlist_item_blank.TextGrid</code></li>
+</ul>
+<p align = "center">
+<video controls>
+  <source src="/static/blog/videos/2013/06/praat-scripting.mp4" type="video/mp4">
+  <source src="/static/blog/videos/2013/06/praat-scripting.ogv" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+Screencast: Semi-automatic annotation of interval labels in the
+TextGrid using a Praat script.
+</p>
+
+<p>If you'd like, you can also repeat the procedure with a TextGrid which
+has not had <code>xxx</code> annotated in the intervals to be ignored. In this
+case, the text files with the labels have blank lines between each
+label so that the script will skip the intervals to be ignored between
+each elicitation item interval (there's only one such junk interval
+between each elicitation item interval).</p>
+<ul>
+<li><code>20111213-2-kiy-ap-framedwordlist_item_newlines_blank.TextGrid</code> is
+  another TextGrid we start with, which has boundaries set down already in
+  the appropriate places to mark elicitation items. It contains empty
+  intervals (no annotations) in the intervals between the intervals for
+  elicitation items.</li>
+<li><code>kiy-labels-newlines.txt</code> and <code>numeric-labels-newlines.txt</code> contain the labels that go
+  in <code>20111213-2-kiy-ap-framedwordlist_item_newlines_blank.TextGrid</code>  </li>
+</ul>
+<p>Perhaps the trickiest thing when one is starting out working with
+Praat scripts is figuring out how to specify file and directory paths
+in the script. </p>
+<p>For Mac OS X, one way to do this is in <code>Finder</code>. Right click on the
+file of interest (here: <code>kiy-labels.txt</code>) and click on <code>Get info</code>. The
+directory the file is in will come up in <code>Where</code> in the
+<code>kiy-labels.txt Info</code> window, as shown below and you can select and
+copy it. You just need to tack on the file name at the end. So on my machine, the path to <code>kiy-labels.txt</code> is <code>/Users/amoebe/Documents/mind/proj/kiy-ldc/tutorials/annotating-audio-files/your-turn/kiy-labels.txt</code>.</p>
+<div align = "center">
+<figure>
+<img src="/static/blog/img/2013/06/path-mac.jpg"
+alt = "Using Get Info to get the file path in Finder." width = "500"><br>
+<figcaption>Using <tt>Get Info</tt> to get the file path in <tt>Finder</tt>.</figcaption>
+</figure>
+</div>
+
+<p></p>
+
+<p>In Windows, you can copy the file path too in Explorer using the
+command <code>Copy as path</code>, as described
+<a href="http://www.pcworld.com/article/251406/windows_tips_copy_a_file_path_show_or_hide_extensions.html">here</a>. Supposedly
+this works in Windows Vista, Windows 7, and Windows 8.</p>
+<p>In the shell, the <code>pwd</code> command will tell print the working directory:</p>
+<div class="highlight"><pre><span></span><span class="o">[</span>~/ldc/tutorials/annotating-audio-files/your-turn<span class="o">](</span>master *<span class="o">)</span>
+amoebe@moebius :: ls
+<span class="m">20111213</span>-2-kiy-ap-framedwordlist.TextGrid.blank            kiy-labels <span class="o">(</span>Autosaved<span class="o">)</span>.txt
+<span class="m">20111213</span>-2-kiy-ap-framedwordlist.txt                   kiy-labels-newlines.txt
+<span class="m">20111213</span>-2-kiy-ap-framedwordlist.wav                   kiy-labels.txt
+<span class="m">20111213</span>-2-kiy-ap-framedwordlist_item.TextGrid             label_from_text_file2.praat
+<span class="m">20111213</span>-2-kiy-ap-framedwordlist_item_blank.TextGrid           numeric-labels-newlines.txt
+<span class="m">20111213</span>-2-kiy-ap-framedwordlist_item_newlines_blank.TextGrid  numeric-labels.txt
+
+<span class="o">[</span>~/ldc/tutorials/annotating-audio-files/your-turn<span class="o">](</span>master *<span class="o">)</span>
+amoebe@moebius :: <span class="nb">pwd</span>
+/Users/amoebe/ldc/tutorials/annotating-audio-files/your-turn
+</pre></div>
+
+
+<p>You can also print the working directory in your command prompt <a href="http://www.brudenossg.com/tip2.php">as I've done</a>. </p>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'krisyu'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'working-with-f0-contours';
+                var disqus_url = 'http://kmyu.github.io/drafts/working-with-f0-contours.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-twitter fa-lg"></i><span class="icon-label">Latest Tweets</span></h4></li>
+    <div id="twitter_timeline">
+        <a class="twitter-timeline" data-chrome="noheader" href="https://twitter.com/linguist_krisyu" data-widget-id="716655349130989568">Tweets by linguist_krisyu</a>
+    </div>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2017 Kristine M. Yu
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://kmyu.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://kmyu.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://kmyu.github.io/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'krisyu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Piwik -->
+    <script type="text/javascript">
+        var _paq = _paq || [];
+        _paq.push(["trackPageView"]);
+        _paq.push(["enableLinkTracking"]);
+
+        (function() {
+            var u=(("https:" == document.location.protocol) ? "https://www.piwik.krisyu.org/" : "http://www.piwik.krisyu.org/");
+            _paq.push(["setTrackerUrl", u+"piwik.php"]);
+            _paq.push(["setSiteId", "2"]);
+            var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+            g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Piwik Code -->
+
+</body>
+</html>
