@@ -1,6 +1,6 @@
 Title: Research
 Slug: research
-<!-- Time-stamp: <2017-08-28 10:18:32 amoebe> -->
+<!-- Time-stamp: <2017-09-04 13:09:22 amoebe> -->
 
 
 (See [CV](https://rawgithub.com/krismyu/kmyu-cv/master/kmyu-cv.pdf)
@@ -22,13 +22,13 @@ Selected talk slides are available at [Speaker Deck](https://speakerdeck.com/kri
    tonal fieldwork. Language Documentation & Conservation 8, pp. 738-777.
       [[web](http://scholarspace.manoa.hawaii.edu/bitstream/handle/10125/24623/Yu.pdf?sequence=1), 
       [pdf](/pages/pdfs/yu2014-kiy.pdf), 
-      [supplementary materials](http://www.krisyu.org/blog/posts/2013/06/ldc-kiy-overview/)]
+      [supplementary materials](http://www.krisyu.org/blog/posts/ldc-kiy-overview/)]
 
 3. Kristine M. Yu and Hiu Wai Lam (2014). The role of creaky voice in
    Cantonese tone perception.[^1] JASA 136(3), pp. 1320-1333.
          [[web](http://scitation.aip.org/content/asa/journal/jasa/136/3/10.1121/1.4887462),
    [pdf](/pages/pdfs/yulam2014-jasa-cantcr.pdf), 
-      [supplementary materials](http://www.krisyu.org/blog/posts/2014/06/supp-material-cantonese-creak-perception/)]
+      [supplementary materials](http://www.krisyu.org/blog/posts/supp-material-cantonese-creak-perception/)]
 
 4. Kristine M. Yu, Sameer ud Dowla Khan, and Megha
    Sundara (2014). Intonational phonology in Bengali and English
