@@ -3,7 +3,7 @@ slug: home
 save_as: index.html
 URL:
 
-<!-- Time-stamp: <2017-10-10 19:31:29 amoebe>  -->
+<!-- Time-stamp: <2019-08-05 06:47:24 oxbow>  -->
 
 <div class="banner">
 	<div class="container">
@@ -27,7 +27,7 @@ URL:
 </p>
 
 <p>
-<h3>Assistant Professor, <a href = "http://www.umass.edu/linguist">Linguistics</a><br>
+<h3>Associate Professor, <a href = "http://www.umass.edu/linguist">Linguistics</a><br>
 <a href = "http://www.umass.edu">University of Massachusetts Amherst</a></h3><br>
 </p>
 
@@ -44,13 +44,15 @@ ILC N422<br>
 <div class = "row">
 	<div class="container">
 	<p>
-	<h3><strong>Recent work:</strong></h3>
+	<h3><strong>Upcoming/recent work:</strong></h3>
 		<h5>
 		<ul>
-			<li><a href = "http://fg.phil.hhu.de/2017/">Formal Grammar 2017</a> accepted paper: <a href = "http://www.krisyu.org/pages/pdfs/yu2017-smo-constituency-fg.pdf">Advantages of constituency:
-	computational perspectives on Samoan word prosody</a></li>
-			<li>Journal of Phonetics paper (2017): <a href = "http://www.krisyu.org/pages/pdfs/yu2017_res.pdf">The role of time in phonetic spaces: temporal resolution in Cantonese tone perception</a></li>
-			<li>Laboratory Phonology accepted paper (with Ed Stabler): <a href = "http://www.krisyu.org/pages/pdfs/yustabler2017_invar_samoan.pdf">(In)variability in the Samoan syntax/prosody interface and consequences for syntactic parsing</a></li>
+		<li><a href = "http://filcat.uab.cat/pagines_clt/recphon2019/"><RecPhon 2019, Nov. 2019.></a> Presentation: Computational perspectives on phonological constituency and recursion.</a></li>
+ 			<li><a href = "https://nwav48.uoregon.edu/"><NWAV 48, Oct. 2019</a>  Presentation with <a href = "https://www.umass.edu/linguistics/member/lisa-green?"><Lisa Green>: The prosody and meaning of BIN constructions in African American English.</a></li>
+			<li><a href = "https://icphs2019.org"><ICPhS 2019 poster: . [<a href = "pdfs/yu2019_icphs_vq_poster.pdf"><poster></a>, <a href = "yu2019_icphs_vq.pdf"><paper>.]
+			<li><a href = "https://linguistics.ucla.edu/people/jun/IntonationWorkshop2019/"><ICPhS 2019 Satellite Workshop: Intonational Phonology of Typologically Rare or Understudied Languages, August 2019.</a> Invited presentation: The intonational phonology of Samoan revisited. [<a href = "https://speakerdeck.com/krisyu/the-intonational-phonology-of-samoan-revisited"><slides></a>]
+			<li>NLLT accepted paper: Tonal marking of absolutive case in Samoan. Contact me for a copy.</li>
+			<li>Contribution to Minimalist Parsing volume (to appear). Parsing with Minimalist Grammar and prosodic trees. [<a href = "pdfs/yu2019_mg_prosody_parsing_uncorr_proofs.pdf"><Uncorrected proofs>]<li>
 		</ul>
 	</h5>
 	</div>
